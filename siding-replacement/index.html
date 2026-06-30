@@ -311,7 +311,7 @@
       align-items: center;
     }
     .affects-content {
-      flex: 0 0 60%;
+      flex: 0 0 40%;
       display: flex;
       flex-direction: column;
       gap: 0;
@@ -356,7 +356,7 @@
       color: var(--muted);
     }
     .affects-image {
-      flex: 0 0 40%;
+      flex: 0 0 60%;
     }
     .affects-image img { border-radius: 8px; width: 100%; }
 
@@ -392,7 +392,7 @@
       font-size: 18px;
       font-weight: 400;
       line-height: 27px;
-      color: var(--muted);
+      color: var(--primary);
       max-width: 620px;
       margin-bottom: 20px;
     }
@@ -417,7 +417,7 @@
       font-size: 18px;
       font-weight: 400;
       line-height: 27px;
-      color: var(--muted);
+      color: var(--primary);
       max-width: 620px;
       margin-bottom: 20px;
     }
@@ -672,7 +672,6 @@
       justify-content: flex-end;
       align-items: flex-start;
       gap: 20px;
-      padding-top: 142px;
     }
     .footer-col h2 {
       font-family: 'Lato', sans-serif;
@@ -743,7 +742,7 @@
       .faq-title { font-size: 36px; line-height: 42px; }
       .bottom-cta h2 { font-size: 36px; line-height: 42px; }
       .footer { padding: 50px 20px 30px; }
-      .footer-col-wrap { padding-top: 0; flex-direction: column; gap: 30px; }
+      .footer-col-wrap { flex-direction: column; gap: 30px; }
       .footer-bottom { margin-top: 30px; }
     }
     @media (max-width: 767px) {
@@ -764,9 +763,9 @@
       .pricing-card p { text-align: center; font-size: 16px; line-height: 24px; max-width: none; }
       .affects-cost { padding: 30px 20px; }
       .affects-inner { flex-direction: column; }
+      .affects-image { flex: none; width: 100%; }
       .affects-content { flex: none; width: 100%; }
       .affects-content h2 { font-size: 36px; line-height: 42px; }
-      .affects-image { flex: none; width: 100%; }
       .hardie-cost { padding: 30px 20px; }
       .hardie-inner { flex-direction: column; }
       .hardie-content { flex: none; width: 100%; }
@@ -789,7 +788,7 @@
       .bottom-cta h2 { font-size: 36px; line-height: 42px; }
       .footer { padding: 30px 20px; }
       .footer-top { flex-direction: column; }
-      .footer-col-wrap { padding-top: 0; flex-direction: column; }
+      .footer-col-wrap { flex-direction: column; }
       .footer-brand img { max-width: 60px; }
       .footer-brand .company-name { font-size: 20px; line-height: 28px; text-align: center; }
       .footer-brand .company-desc { text-align: center; max-width: none; }
@@ -942,6 +941,12 @@
     <div class="container">
       <div class="affects-inner">
 
+        <div class="affects-image">
+          <img src="images/siding-install.png"
+               alt="Siding installation on a Long Island home"
+               width="1542" height="1080" decoding="async" loading="lazy">
+        </div>
+
         <div class="affects-content">
           <h2>What Affects Siding Cost</h2>
 
@@ -1000,12 +1005,6 @@
             </div>
           </div>
 
-        </div>
-
-        <div class="affects-image">
-          <img src="images/siding-install.png"
-               alt="Siding installation on a Long Island home"
-               width="771" height="540" decoding="async" loading="lazy">
         </div>
 
       </div>
@@ -1068,7 +1067,7 @@
 
         <div class="testimonials-cta-box">
           <h2>What Homeowners Say</h2>
-          <p>Real feedback from satisfied Long Island homeowners</p>
+          <p>Real feedback from satisfied<br> Long Island homeowners</p>
         </div>
 
         <div class="testimonials-cards">
