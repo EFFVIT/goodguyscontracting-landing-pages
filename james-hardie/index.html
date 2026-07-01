@@ -188,13 +188,15 @@
       line-height: 56px;
       color: #fff;
       margin-bottom: 16px;
+      text-align: center;
     }
     .hero-form-note {
-      margin-top: 10px;
+      margin-top: -20px;
       font-family: "Lato", Sans-serif;
       font-size: 14px;
       font-weight: 400;
       color: rgba(255,255,255,0.45);
+      text-align: center;
     }
 
     @media (max-width: 1024px) {
@@ -217,7 +219,7 @@
     ════════════════════════════════ */
     .trust-strip {
       background: #E5E5E5;
-      padding: 30px 0;
+      padding: 30px 0 10px;
     }
     .trust-badges {
       display: flex;
@@ -342,7 +344,7 @@
     /* ════════════════════════════════
        INSTALLATION
     ════════════════════════════════ */
-    .install-section { background: #fff; padding: 70px 0; }
+    .install-section { background: #fff; padding: 0; }
     .install-inner {
       display: grid;
       grid-template-columns: 1fr 1fr;
@@ -372,7 +374,7 @@
     /* ════════════════════════════════
        PROCESS
     ════════════════════════════════ */
-    .process-section { background: #fff; padding: 70px 0; }
+    .process-section { background: #fff; padding: 50px 0; }
     .process-section > .container > .section-heading {
       text-align: center;
       margin-bottom: 52px;
@@ -429,7 +431,7 @@
     /* ════════════════════════════════
        GALLERY
     ════════════════════════════════ */
-    .gallery-section { background: #fff; padding: 70px 0; }
+    .gallery-section { background: #fff; padding: 50px 0; }
     .gallery-section > .container > .section-heading { text-align: center; margin-bottom: 12px; }
     .gallery-sub {
       text-align: center;
@@ -468,6 +470,7 @@
       padding: 50px 70px;
       display: flex;
       align-items: center;
+      border-radius: 10px;
     }
     .testimonials-left .section-heading { color: #fff; }
     .testimonials-right {
@@ -481,7 +484,7 @@
       display: flex;
       flex-direction: column;
       gap: 10px;
-      padding: 30px;
+      padding: 20px;
     }
     .testimonial-card + .testimonial-card {
       border-top: 1px solid #E5E5E5;
@@ -516,7 +519,7 @@
     /* ════════════════════════════════
        FAQ
     ════════════════════════════════ */
-    .faq-section { background: #fff; padding: 70px 0; }
+    .faq-section { background: #fff; padding: 50px 0; }
     .faq-inner {
       display: grid;
       grid-template-columns: 340px 1fr;
@@ -906,7 +909,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
           <svg width="80" height="80" viewBox="0 0 80 80" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
             <path d="M0 40C0 17.9086 17.9086 0 40 0C62.0914 0 80 17.9086 80 40C80 62.0914 62.0914 80 40 80C17.9086 80 0 62.0914 0 40Z" fill="#FF814B"/>
             <path d="M45 23.3333H35C34.0795 23.3333 33.3333 24.0794 33.3333 24.9999V28.3333C33.3333 29.2537 34.0795 29.9999 35 29.9999H45C45.9205 29.9999 46.6667 29.2537 46.6667 28.3333V24.9999C46.6667 24.0794 45.9205 23.3333 45 23.3333Z" stroke="black" stroke-width="3.33333" stroke-linecap="round" stroke-linejoin="round"/>
-            <path d="M46.6667 26.6667H50C51.7681 26.6667 53.3334 28.232 53.3334 30.0001V53.3333C53.3334 55.1014 51.7681 56.6667 50 56.6667H30C28.2319 56.6667 26.6667 55.1014 26.6667 53.3333V30.0001C26.6667 28.232 28.2319 26.6667 30 26.6667H33.3333" stroke="black" stroke-width="3.33333" stroke-linecap="round" stroke-linejoin="round"/>
+            <path d="M46.6667 26.6667H50C50.884 26.6667 51.7319 27.0179 52.357 27.6431C52.9821 28.2682 53.3333 29.116 53.3333 30.0001V53.3334C53.3333 54.2175 52.9821 55.0653 52.357 55.6904C51.7319 56.3156 50.884 56.6667 50 56.6667H30C29.1159 56.6667 28.2681 56.3156 27.643 55.6904C27.0178 55.0653 26.6667 54.2175 26.6667 53.3334V30.0001C26.6667 29.116 27.0178 28.2682 27.643 27.6431C28.2681 27.0179 29.1159 26.6667 30 26.6667H33.3333" stroke="black" stroke-width="3.33333" stroke-linecap="round" stroke-linejoin="round"/>
             <path d="M35 43.3333L38.3333 46.6667L45 40" stroke="black" stroke-width="3.33333" stroke-linecap="round" stroke-linejoin="round"/>
           </svg>
         </div>
@@ -925,9 +928,9 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
             <path d="M0 40C0 17.9086 17.9086 0 40 0C62.0914 0 80 17.9086 80 40C80 62.0914 62.0914 80 40 80C17.9086 80 0 62.0914 0 40Z" fill="#FF814B"/>
             <path d="M45 23.3333H30C28.1591 23.3333 26.6667 24.8257 26.6667 26.6666V53.3333C26.6667 55.1742 28.1591 56.6666 30 56.6666H50C51.8409 56.6666 53.3333 55.1742 53.3333 53.3333V31.6666L45 23.3333Z" stroke="black" stroke-width="3.33333" stroke-linecap="round" stroke-linejoin="round"/>
             <path d="M43.3333 23.3333V29.9999C43.3333 31.8409 44.8257 33.3333 46.6667 33.3333H53.3333" stroke="black" stroke-width="3.33333" stroke-linecap="round" stroke-linejoin="round"/>
-            <path d="M36.6667 38.3333H33.3333" stroke="black" stroke-width="3.33333" stroke-linecap="round"/>
-            <path d="M46.6667 43.3333H33.3333" stroke="black" stroke-width="3.33333" stroke-linecap="round"/>
-            <path d="M46.6667 48.3333H33.3333" stroke="black" stroke-width="3.33333" stroke-linecap="round"/>
+            <path d="M36.6666 35H33.3333" stroke="black" stroke-width="3.33333" stroke-linecap="round"/>
+            <path d="M46.6666 41.6667H33.3333" stroke="black" stroke-width="3.33333" stroke-linecap="round"/>
+            <path d="M46.6666 48.3333H33.3333" stroke="black" stroke-width="3.33333" stroke-linecap="round"/>
           </svg>
         </div>
         <p class="step-number">Step 2</p>
@@ -943,9 +946,9 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
         <div class="step-icon-wrap">
           <svg width="80" height="80" viewBox="0 0 80 80" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
             <path d="M0 40C0 17.9086 17.9086 0 40 0C62.0914 0 80 17.9086 80 40C80 62.0914 62.0914 80 40 80C17.9086 80 0 62.0914 0 40Z" fill="#FF814B"/>
-            <path d="M45.0001 40L31.0451 53.955C30.4201 54.58 29.5784 54.9317 28.7001 54.9317C27.8217 54.9317 26.9801 54.58 26.3551 53.955C25.7301 53.33 25.3784 52.4883 25.3784 51.61C25.3784 50.7317 25.7301 49.89 26.3551 49.265L40.0001 35.6667" stroke="black" stroke-width="3.33333" stroke-linecap="round" stroke-linejoin="round"/>
-            <path d="M50 45L56.6667 38.3333" stroke="black" stroke-width="3.33333" stroke-linecap="round" stroke-linejoin="round"/>
-            <path d="M55.8333 39.1667L52.6433 25.7083C52.5225 25.1983 52.2407 24.7385 51.8381 24.3969C51.4354 24.0553 50.9329 23.8494 50.4058 23.8083L43.3333 23.3333L47.5 31.6667L43.3333 35.8333L35 32.0833L34.5833 39.1667C34.5422 39.6938 34.7481 40.1963 35.0897 40.5989C35.4313 41.0016 35.8911 41.2833 36.4011 41.4042L50.0001 44.5833" stroke="black" stroke-width="3.33333" stroke-linecap="round" stroke-linejoin="round"/>
+            <path d="M45.0001 40L31.0451 53.955C30.382 54.618 29.4827 54.9905 28.5451 54.9905C27.6074 54.9905 26.7081 54.618 26.0451 53.955C25.382 53.292 25.0095 52.3927 25.0095 51.455C25.0095 50.5173 25.382 49.618 26.0451 48.955L40.0001 35" stroke="black" stroke-width="3.33333" stroke-linecap="round" stroke-linejoin="round"/>
+            <path d="M50 44.9999L56.6667 38.3333" stroke="black" stroke-width="3.33333" stroke-linecap="round" stroke-linejoin="round"/>
+            <path d="M55.8333 39.1667L52.6433 35.9767C52.0182 35.3517 51.6669 34.504 51.6667 33.62V31.6667L47.9 27.9C46.0409 26.042 43.525 24.9906 40.8967 24.9733L35 24.9333L36.5333 26.3C37.6224 27.2657 38.4945 28.4512 39.092 29.7784C39.6896 31.1057 39.999 32.5445 40 34V36.6667L43.3333 40H45.2867C46.1706 40.0002 47.0184 40.3515 47.6433 40.9767L50.8333 44.1667" stroke="black" stroke-width="3.33333" stroke-linecap="round" stroke-linejoin="round"/>
           </svg>
         </div>
         <p class="step-number">Step 3</p>
@@ -961,7 +964,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
         <div class="step-icon-wrap">
           <svg width="80" height="80" viewBox="0 0 80 80" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
             <path d="M0 40C0 17.9086 17.9086 0 40 0C62.0914 0 80 17.9086 80 40C80 62.0914 62.0914 80 40 80C17.9086 80 0 62.0914 0 40Z" fill="#FF814B"/>
-            <path d="M56.335 36.6667C57.0962 40.4022 56.6638 44.2802 55.0953 47.7638C53.5268 51.2474 50.9001 54.1682 47.5893 56.1269C44.2786 58.0856 40.4424 58.9868 36.5934 58.7101C32.7445 58.4334 29.0768 56.9928 26.0868 54.5831C23.0969 52.1734 20.9277 48.912 19.8734 45.2378C18.819 41.5635 18.9319 37.6569 20.1963 34.0494C21.4607 30.4419 23.8137 27.3104 26.937 25.0792C30.0604 22.848 33.7988 21.625 37.6683 21.575" stroke="black" stroke-width="3.33333" stroke-linecap="round" stroke-linejoin="round"/>
+            <path d="M56.335 36.6666C57.0962 40.4021 56.5537 44.2857 54.7981 47.6696C53.0425 51.0536 50.1799 53.7334 46.6876 55.2622C43.1953 56.791 39.2844 57.0763 35.6072 56.0706C31.93 55.0649 28.7087 52.829 26.4805 49.7357C24.2523 46.6424 23.1519 42.8787 23.3628 39.0723C23.5737 35.2659 25.0832 31.6468 27.6395 28.8186C30.1957 25.9904 33.6443 24.124 37.4102 23.5307C41.176 22.9374 45.0313 23.6531 48.3334 25.5583" stroke="black" stroke-width="3.33333" stroke-linecap="round" stroke-linejoin="round"/>
             <path d="M35 38.3334L40 43.3334L56.6667 26.6667" stroke="black" stroke-width="3.33333" stroke-linecap="round" stroke-linejoin="round"/>
           </svg>
         </div>
