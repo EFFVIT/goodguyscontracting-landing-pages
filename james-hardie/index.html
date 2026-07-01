@@ -101,7 +101,7 @@
       transition: background 0.25s ease, box-shadow 0.25s ease;
     }
     .site-header.scrolled {
-      background: rgba(5,5,5,0.96);
+      background: #050505;
       box-shadow: 0 1px 0 rgba(255,255,255,0.06);
     }
     .header-inner {
@@ -127,7 +127,7 @@
     ════════════════════════════════ */
     .hero {
       background:
-        linear-gradient(to right, #050505 45%, rgba(5,5,5,0.4) 100%),
+        linear-gradient(to right, #050505 40%, rgba(5,5,5,0.7) 100%),
         url('images/after-2.png') right center / cover no-repeat;
       padding: 230px 0 70px;
     }
@@ -216,8 +216,7 @@
        TRUST STRIP
     ════════════════════════════════ */
     .trust-strip {
-      background: #F9FAFB;
-      border-bottom: 1px solid #E5E5E5;
+      background: #E5E5E5;
       padding: 30px 0;
     }
     .trust-badges {
@@ -343,7 +342,7 @@
     /* ════════════════════════════════
        INSTALLATION
     ════════════════════════════════ */
-    .install-section { background: #F9FAFB; padding: 70px 0; }
+    .install-section { background: #fff; padding: 70px 0; }
     .install-inner {
       display: grid;
       grid-template-columns: 1fr 1fr;
@@ -413,7 +412,7 @@
       display: flex;
       align-items: flex-start;
       justify-content: center;
-      padding-top: 56px;
+      padding-top: 70px;
     }
     .step-arrow svg { width: 20px; height: 20px; fill: #ccc; }
 
@@ -430,7 +429,7 @@
     /* ════════════════════════════════
        GALLERY
     ════════════════════════════════ */
-    .gallery-section { background: #F9FAFB; padding: 70px 0; }
+    .gallery-section { background: #fff; padding: 70px 0; }
     .gallery-section > .container > .section-heading { text-align: center; margin-bottom: 12px; }
     .gallery-sub {
       text-align: center;
@@ -458,22 +457,34 @@
     /* ════════════════════════════════
        TESTIMONIALS
     ════════════════════════════════ */
-    .testimonials-section { background: #fff; padding: 70px 0; }
-    .testimonials-section > .container > .section-heading {
-      margin-bottom: 40px;
-    }
-    .testimonials-grid {
+    .testimonials-section { background: #fff; }
+    .testimonials-split {
       display: grid;
-      grid-template-columns: 1fr 1fr 1fr;
-      gap: 20px;
+      grid-template-columns: 38% 62%;
+      min-height: 480px;
+    }
+    .testimonials-left {
+      background: #050505;
+      padding: 50px 70px;
+      display: flex;
+      align-items: center;
+    }
+    .testimonials-left .section-heading { color: #fff; }
+    .testimonials-right {
+      background: #fff;
+      padding: 50px 70px;
+      display: flex;
+      flex-direction: column;
+      gap: 0;
     }
     .testimonial-card {
       display: flex;
       flex-direction: column;
       gap: 10px;
       padding: 30px;
-      border: 1px solid #E5E5E5;
-      border-radius: 4px;
+    }
+    .testimonial-card + .testimonial-card {
+      border-top: 1px solid #E5E5E5;
     }
     .testimonial-icon svg { fill: #4473CA; display: block; }
     .testimonial-quote {
@@ -492,18 +503,20 @@
     }
 
     @media (max-width: 860px) {
-      .testimonials-grid { grid-template-columns: 1fr; }
-      .testimonials-section { padding: 50px 0; }
+      .testimonials-split { grid-template-columns: 1fr; }
+      .testimonials-left { padding: 40px 28px; }
+      .testimonials-right { padding: 36px 28px; }
     }
     @media (max-width: 767px) {
       .testimonial-quote { font-size: 16px; line-height: 24px; }
-      .testimonials-section { padding: 30px 0; }
+      .testimonials-left { padding: 30px 20px; }
+      .testimonials-right { padding: 24px 20px; }
     }
 
     /* ════════════════════════════════
        FAQ
     ════════════════════════════════ */
-    .faq-section { background: #F9FAFB; padding: 70px 0; border-top: 1px solid #E5E5E5; }
+    .faq-section { background: #fff; padding: 70px 0; }
     .faq-inner {
       display: grid;
       grid-template-columns: 340px 1fr;
@@ -575,7 +588,7 @@
     /* ════════════════════════════════
        FINAL CTA
     ════════════════════════════════ */
-    .final-cta { background: #0d0d0d; padding: 50px 0; text-align: center; }
+    .final-cta { background: #161616; padding: 50px 0; text-align: center; }
     .final-cta .section-heading { color: #fff; margin-bottom: 14px; }
     .final-cta-sub {
       font-family: "Lato", Sans-serif;
@@ -596,7 +609,7 @@
        FOOTER
     ════════════════════════════════ */
     .site-footer {
-      background: #0d0d0d;
+      background: #050505;
       padding: 70px 0 30px;
       border-top: 1px solid rgba(255,255,255,0.08);
     }
@@ -978,9 +991,13 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 
 <!-- ════ TESTIMONIALS ════ -->
 <section class="testimonials-section">
-  <div class="container">
-    <h2 class="section-heading">Hear What Others Are Saying About Our Work</h2>
-    <div class="testimonials-grid">
+  <div class="testimonials-split">
+
+    <div class="testimonials-left">
+      <h2 class="section-heading">Hear What Others Are Saying About Our Work</h2>
+    </div>
+
+    <div class="testimonials-right">
 
       <div class="testimonial-card">
         <div class="testimonial-icon">
@@ -1007,6 +1024,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
       </div>
 
     </div>
+
   </div>
 </section>
 
