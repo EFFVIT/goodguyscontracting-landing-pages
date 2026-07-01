@@ -138,7 +138,9 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 
     /* ===== HERO ===== */
     .hero-section {
-      background: linear-gradient(135deg, #0a1628 0%, #1B3D6F 100%);
+      background:
+        linear-gradient(135deg, rgba(10,22,40,0.87) 0%, rgba(27,61,111,0.82) 100%),
+        url('images/after-2.png') center/cover no-repeat;
       padding: 64px 0;
     }
     .hero-inner {
@@ -465,12 +467,39 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
       gap: 24px;
       margin-bottom: 40px;
     }
-    .gallery-item {
+    .ba-pair {
       border-radius: 8px;
       overflow: hidden;
-      box-shadow: 0 8px 24px rgba(0,0,0,0.2);
+      box-shadow: 0 8px 24px rgba(0,0,0,0.25);
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      position: relative;
     }
-    .gallery-item img { width: 100%; display: block; }
+    .ba-side { position: relative; overflow: hidden; }
+    .ba-side img { width: 100%; height: 100%; object-fit: cover; display: block; }
+    .ba-tag {
+      position: absolute;
+      bottom: 10px;
+      left: 10px;
+      font-size: 11px;
+      font-weight: 700;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      padding: 4px 10px;
+      border-radius: 2px;
+      z-index: 2;
+    }
+    .ba-tag-before { background: rgba(0,0,0,0.5); color: rgba(255,255,255,0.85); }
+    .ba-tag-after { background: #FF814B; color: #fff; }
+    .ba-divider-line {
+      position: absolute;
+      top: 0; bottom: 0;
+      left: 50%;
+      width: 3px;
+      background: #fff;
+      transform: translateX(-50%);
+      z-index: 3;
+    }
     .gallery-cta { text-align: center; }
     @media (max-width: 640px) {
       .gallery-grid { grid-template-columns: 1fr; }
@@ -618,7 +647,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
       <div class="site-logo">
         <!-- White logo works on dark headers — swap to a dark version if available -->
         <a href="/james-hardie/">
-          <img src="images/GG_logow-1-1.png" alt="Good Guys Contracting" style="filter: invert(1) brightness(0);">
+          <img src="images/gg-logo-white.png" alt="Good Guys Contracting" style="filter: invert(1) brightness(0);">
         </a>
       </div>
       <div class="header-actions">
@@ -893,11 +922,27 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
       <p>Seeing the results helps homeowners imagine what their own homes could look like. These are real Long Island projects completed by our team.</p>
     </div>
     <div class="gallery-grid">
-      <div class="gallery-item">
-        <img src="images/before-after-1.png" alt="James Hardie siding before and after transformation - Long Island home">
+      <div class="ba-pair">
+        <div class="ba-side">
+          <img src="images/before-1.png" alt="Before: aged siding on Long Island home">
+          <span class="ba-tag ba-tag-before">Before</span>
+        </div>
+        <div class="ba-side">
+          <img src="images/after-1.png" alt="After: James Hardie siding installed">
+          <span class="ba-tag ba-tag-after">After</span>
+        </div>
+        <div class="ba-divider-line"></div>
       </div>
-      <div class="gallery-item">
-        <img src="images/before-after-2.png" alt="James Hardie siding before and after transformation - Long Island home">
+      <div class="ba-pair">
+        <div class="ba-side">
+          <img src="images/before-2.png" alt="Before: aged siding on Long Island home">
+          <span class="ba-tag ba-tag-before">Before</span>
+        </div>
+        <div class="ba-side">
+          <img src="images/after-2.png" alt="After: James Hardie siding installed">
+          <span class="ba-tag ba-tag-after">After</span>
+        </div>
+        <div class="ba-divider-line"></div>
       </div>
     </div>
     <div class="gallery-cta">
@@ -998,7 +1043,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
   <div class="container">
     <div class="footer-inner">
       <div class="footer-logo">
-        <img src="images/GG_logow-1-1.png" alt="Good Guys Contracting">
+        <img src="images/gg-logo-white.png" alt="Good Guys Contracting">
         <p class="footer-tagline">Professional James Hardie siding installation on Long Island</p>
       </div>
       <div class="footer-col">
