@@ -58,11 +58,20 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
        HEADER — dark bg
     ════════════════════════════════════════ */
     .site-header {
-      background: #0d0d0d;
-      padding: 14px 0;
-      position: sticky;
+      background: transparent;
+      padding: 16px 0;
+      position: fixed;
       top: 0;
+      left: 0;
+      right: 0;
       z-index: 100;
+      transition: background 0.25s ease, box-shadow 0.25s ease;
+    }
+    .site-header.scrolled {
+      background: rgba(10,10,10,0.97);
+      box-shadow: 0 1px 0 rgba(255,255,255,0.06);
+      backdrop-filter: blur(8px);
+      -webkit-backdrop-filter: blur(8px);
     }
     .header-inner {
       display: flex;
@@ -84,7 +93,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
     .hero-section {
       background: linear-gradient(rgba(8,16,30,0.82), rgba(8,16,30,0.82)),
                   url('images/after-2.png') center/cover no-repeat;
-      padding: 60px 0 72px;
+      padding: 130px 0 80px;
     }
     .hero-inner {
       display: grid;
@@ -883,6 +892,18 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 
 <!-- Chat Widget -->
 <script src="https://widgets.leadconnectorhq.com/loader.js" data-resources-url="https://widgets.leadconnectorhq.com/chat-widget/loader.js" data-widget-id="6683c891dd58566324bbf8d8"></script>
+
+<!-- Transparent nav → dark on scroll -->
+<script>
+  (function() {
+    var header = document.querySelector('.site-header');
+    function onScroll() {
+      header.classList.toggle('scrolled', window.scrollY > 60);
+    }
+    window.addEventListener('scroll', onScroll, { passive: true });
+    onScroll();
+  })();
+</script>
 
 <!-- FAQ Accordion + Expand All -->
 <script>
