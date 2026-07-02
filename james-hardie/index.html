@@ -463,13 +463,13 @@
       font-weight: 400;
       line-height: 27px;
       color: #050505;
-      margin-bottom: 40px;
+      margin-bottom: 20px;
     }
     .ba-grid {
       display: grid;
       grid-template-columns: 1fr 1fr;
       gap: 20px;
-      margin-bottom: 40px;
+      margin-bottom: 20px;
     }
     .ba-img { width: 100%; display: block; border-radius: 10px; }
     .gallery-cta { text-align: center; }
@@ -510,7 +510,9 @@
       display: flex;
       flex-direction: column;
       gap: 10px;
-      padding: 20px;
+      padding: 30px;
+      border-radius: 10px;
+      box-shadow: 0px 4px 6px -1px rgba(0, 0, 0, 0.1);
     }
     .testimonial-icon svg { fill: #4473CA; display: block; }
     .testimonial-quote {
@@ -556,24 +558,23 @@
       font-size: 18px;
       font-weight: 700;
       line-height: 27px;
-      color: #fff;
-      background: #4473CA;
-      border: 2px solid #4473CA;
-      border-radius: 4px;
-      padding: 16px 23px;
+      color: #050505;
+      background: transparent;
+      border: none;
+      padding: 0;
       cursor: pointer;
     }
-    .faq-expand-btn:hover { background: #3360b5; border-color: #3360b5; }
+    .faq-expand-btn:hover { color: #4473CA; }
     .faq-list { display: flex; flex-direction: column; }
-    .faq-item { border-top: 1px solid #E5E5E5; }
-    .faq-item:last-child { border-bottom: 1px solid #E5E5E5; }
+    .faq-item { border-top: 1px solid rgba(2,1,1,0.18); }
+    .faq-item:last-child { border-bottom: 1px solid rgba(2,1,1,0.18); }
     .faq-question {
       width: 100%;
       display: flex;
       align-items: center;
       justify-content: space-between;
       gap: 16px;
-      padding: 20px 0;
+      padding: 10px 25px;
       background: none;
       border: none;
       cursor: pointer;
@@ -584,14 +585,14 @@
       line-height: 27px;
       color: #050505;
     }
-    .faq-chevron { flex-shrink: 0; color: #4473CA; }
+    .faq-chevron { flex-shrink: 0; color: #717182; }
     .faq-chevron .icon-open { display: none; }
     .faq-chevron .icon-closed { display: block; }
     .faq-item.open .faq-chevron .icon-open { display: block; }
     .faq-item.open .faq-chevron .icon-closed { display: none; }
     .faq-answer {
       display: none;
-      padding: 0 40px 20px 0;
+      padding: 0 25px 20px 25px;
       font-family: "Lato", Sans-serif;
       font-size: 18px;
       font-weight: 400;
