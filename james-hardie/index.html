@@ -331,7 +331,7 @@
       width: 100%; height: 100%;
       border: none;
     }
-    .partner-logos { display: flex; flex-direction: column; gap: 14px; }
+    .partner-logos { display: flex; flex-direction: row; justify-content: space-between; align-items: center; }
     .logo-jh { max-height: 36px; width: auto; }
     .logo-elite { max-height: 46px; width: auto; }
     .why-copy .section-heading { margin-bottom: 16px; }
@@ -351,7 +351,7 @@
     .install-section { background: #fff; padding: 0; }
     .install-inner {
       display: grid;
-      grid-template-columns: 285px minmax(0, 1fr);
+      grid-template-columns: minmax(0, 1fr) 285px;
       gap: 60px;
       align-items: stretch;
     }
@@ -404,18 +404,22 @@
     }
     .process-steps {
       display: grid;
-      grid-template-columns: 1fr 40px 1fr 40px 1fr 40px 1fr;
-      align-items: start;
+      grid-template-columns: 1fr 30px 1fr 30px 1fr 30px 1fr;
+      align-items: stretch;
       gap: 0;
     }
-    .process-step { text-align: center; padding: 30px; }
+    .process-step {
+      text-align: center;
+      padding: 30px;
+      box-shadow: 0px 4px 6px -1px rgba(0, 0, 0, 0.1);
+    }
     .step-icon-wrap { width: 80px; height: 80px; margin: 0 auto 16px; }
     .step-number {
       font-family: "Lato", Sans-serif;
       font-size: 18px;
       font-weight: 700;
       line-height: 27px;
-      color: #050505;
+      color: #4473CA;
       margin-bottom: 4px;
     }
     .step-title {
@@ -435,11 +439,10 @@
     }
     .step-arrow {
       display: flex;
-      align-items: flex-start;
+      align-items: center;
       justify-content: center;
-      padding-top: 70px;
     }
-    .step-arrow svg { width: 20px; height: 20px; fill: #ccc; }
+    .step-arrow svg { width: 25px; height: 25px; fill: #4473CA; }
 
     @media (max-width: 1024px) {
       .process-steps { grid-template-columns: 1fr 1fr; gap: 0; }
@@ -888,12 +891,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
   <div class="container">
     <div class="install-inner">
 
-      <!-- Left: image -->
-      <div class="install-img">
-        <img src="images/david-ferraro.png" alt="" width="1083" height="1422" loading="lazy" decoding="async">
-      </div>
-
-      <!-- Right: copy -->
+      <!-- Left: copy -->
       <div class="install-copy">
         <h2 class="section-heading">Hardie Siding Is Only As Good As The Installation</h2>
         <p class="section-text">Fiber cement siding requires proper installation techniques to perform as intended. Poor installation can lead to moisture problems, premature wear, and voided manufacturer warranties. Our team follows strict installation protocols to ensure your investment is protected.</p>
@@ -916,6 +914,11 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
           </li>
         </ul>
         <a href="#estimate-form" class="btn btn-blue">Get My Free Siding Estimate</a>
+      </div>
+
+      <!-- Right: image -->
+      <div class="install-img">
+        <img src="images/david-ferraro.png" alt="" width="1083" height="1422" loading="lazy" decoding="async">
       </div>
 
     </div>
