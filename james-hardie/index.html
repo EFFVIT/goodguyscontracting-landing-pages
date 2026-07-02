@@ -365,8 +365,8 @@
     .install-section { background: #fff; padding: 0; }
     .install-inner {
       display: grid;
-      grid-template-columns: minmax(0, 1fr) 285px;
-      gap: 60px;
+      grid-template-columns: 2fr 3fr;
+      gap: 20px;
       align-items: stretch;
     }
     .install-copy .section-heading { margin-bottom: 16px; }
@@ -398,11 +398,11 @@
     }
 
     @media (max-width: 1024px) {
-      .install-inner { grid-template-columns: 1fr; }
-      .install-img img { aspect-ratio: 4/3; }
       .install-section { padding: 50px 0; }
     }
     @media (max-width: 767px) {
+      .install-inner { grid-template-columns: 1fr; }
+      .install-img img { aspect-ratio: 4/3; }
       .install-section { padding: 30px 0; }
       .install-checklist { grid-template-columns: 1fr; }
       .install-checklist li { font-size: 16px; line-height: 24px; }
