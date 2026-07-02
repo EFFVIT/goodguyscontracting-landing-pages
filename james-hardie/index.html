@@ -350,9 +350,9 @@
     .install-section { background: #fff; padding: 0; }
     .install-inner {
       display: grid;
-      grid-template-columns: minmax(0, 1fr) 285px;
+      grid-template-columns: 285px minmax(0, 1fr);
       gap: 60px;
-      align-items: start;
+      align-items: stretch;
     }
     .install-copy .section-heading { margin-bottom: 16px; }
     .install-copy .section-text { margin-bottom: 24px; }
@@ -373,10 +373,13 @@
       color: #050505;
     }
     .install-checklist li svg { flex-shrink: 0; }
+    .install-img { display: flex; }
     .install-img img {
       width: 100%;
-      border-radius: 10px;
+      height: 100%;
       object-fit: cover;
+      object-position: top;
+      border-radius: 10px;
     }
 
     @media (max-width: 1024px) {
@@ -883,7 +886,12 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
   <div class="container">
     <div class="install-inner">
 
-      <!-- Left: copy -->
+      <!-- Left: image -->
+      <div class="install-img">
+        <img src="images/david-ferraro.png" alt="" width="1083" height="1422" loading="lazy" decoding="async">
+      </div>
+
+      <!-- Right: copy -->
       <div class="install-copy">
         <h2 class="section-heading">Hardie Siding Is Only As Good As The Installation</h2>
         <p class="section-text">Fiber cement siding requires proper installation techniques to perform as intended. Poor installation can lead to moisture problems, premature wear, and voided manufacturer warranties. Our team follows strict installation protocols to ensure your investment is protected.</p>
@@ -906,11 +914,6 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
           </li>
         </ul>
         <a href="#estimate-form" class="btn btn-blue">Get My Free Siding Estimate</a>
-      </div>
-
-      <!-- Right: image -->
-      <div class="install-img">
-        <img src="images/david-ferraro.png" alt="" width="1083" height="1422" loading="lazy" decoding="async">
       </div>
 
     </div>
