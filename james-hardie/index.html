@@ -658,7 +658,7 @@
     }
     .footer-inner {
       display: grid;
-      grid-template-columns: 1fr 1fr 1fr;
+      grid-template-columns: 1fr 1fr;
       gap: 48px;
       margin-bottom: 40px;
     }
@@ -679,6 +679,7 @@
       color: rgba(255,255,255,0.45);
       max-width: 350px;
     }
+    .footer-contact { text-align: right; }
     .footer-contact-heading {
       font-family: "Lato", Sans-serif;
       font-size: 18px;
@@ -697,30 +698,33 @@
     }
     .footer-contact-list a { color: rgba(255,255,255,0.6); }
     .footer-contact-list a:hover { color: #fff; }
-    .footer-copyright {
-      font-family: "Lato", Sans-serif;
-      font-size: 18px;
-      font-weight: 400;
-      line-height: 27px;
-      color: rgba(255,255,255,0.45);
-      display: flex;
-      align-items: flex-start;
-    }
     .footer-bottom {
       border-top: 1px solid rgba(255,255,255,0.08);
       padding-top: 24px;
       font-family: "Lato", Sans-serif;
       font-size: 13px;
       color: rgba(255,255,255,0.28);
-      text-align: center;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 12px;
     }
+    .footer-legal-links { display: flex; gap: 20px; flex-wrap: wrap; }
+    .footer-legal-links a {
+      color: rgba(255,255,255,0.28);
+      text-decoration: none;
+    }
+    .footer-legal-links a:hover { color: rgba(255,255,255,0.7); }
 
     @media (max-width: 860px) {
-      .footer-inner { grid-template-columns: 1fr 1fr; gap: 32px; }
+      .footer-inner { gap: 32px; }
       .site-footer { padding: 50px 0 24px; }
     }
     @media (max-width: 600px) {
       .footer-inner { grid-template-columns: 1fr; gap: 28px; }
+      .footer-contact { text-align: left; }
+      .footer-bottom { flex-direction: column; align-items: flex-start; gap: 16px; }
       .site-footer { padding: 30px 0 20px; }
     }
   </style>
@@ -1166,8 +1170,8 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
         <p class="footer-tagline">Professional James Hardie siding installation on Long Island</p>
       </div>
 
-      <!-- Col 2: Contact -->
-      <div>
+      <!-- Col 2: Contact (right-aligned) -->
+      <div class="footer-contact">
         <p class="footer-contact-heading">Contact Information</p>
         <ul class="footer-contact-list">
           <li>Phone: <a href="tel:+16318406299">(631) 840-6299</a></li>
@@ -1176,12 +1180,17 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
         </ul>
       </div>
 
-      <!-- Col 3: Copyright -->
-      <div class="footer-copyright">
-        &#169; 2026 Good Guys Contracting. All rights reserved.
-      </div>
-
     </div>
+
+    <div class="footer-bottom">
+      <span>&#169; 2026 Good Guys Contracting. All rights reserved.</span>
+      <div class="footer-legal-links">
+        <a href="#">Privacy Policy</a>
+        <a href="#">Cookie Policy</a>
+        <a href="#">Terms of Service</a>
+      </div>
+    </div>
+
   </div>
 </footer>
 
