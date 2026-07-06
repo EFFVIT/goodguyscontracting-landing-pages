@@ -162,16 +162,18 @@
 
   /* WHAT AFFECTS COST */
   .affects-section { background: #fff; padding: 70px 0; }
-  .affects-inner { display: grid; grid-template-columns: auto 1fr; gap: 50px; align-items: start; }
-  .affects-img { max-width: 300px; width: 100%; }
-  .affects-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 30px; margin-top: 36px; }
-  @media (max-width: 860px) { .affects-inner { grid-template-columns: 1fr; } .affects-img { max-width: 100%; } }
-  .affect-item { display: flex; flex-direction: column; gap: 12px; }
-  .affect-icon { width: 48px; height: 48px; flex-shrink: 0; }
-  .affect-title { font-weight: 700; font-size: 18px; line-height: 27px; color: #050505; }
-  .affect-desc { font-size: 16px; line-height: 24px; color: rgba(5,5,5,0.65); }
-  @media (max-width: 860px) { .affects-grid { grid-template-columns: repeat(2, 1fr); } }
-  @media (max-width: 767px) { .affects-section { padding: 40px 0; } .affects-grid { grid-template-columns: 1fr; } }
+  .affects-inner { display: flex; flex-direction: row; gap: 50px; align-items: center; }
+  .affects-left { flex: 1 1 0; min-width: 0; }
+  .affects-left img { width: 100%; display: block; border-radius: 10px; }
+  .affects-right { flex: 1 1 0; min-width: 0; }
+  .affects-list { display: flex; flex-direction: column; gap: 24px; margin-top: 28px; }
+  .affect-item { display: flex; flex-direction: row; align-items: flex-start; gap: 16px; }
+  .affect-icon-wrap { width: 44px; height: 44px; background: #4473CA; border-radius: 8px; display: flex; align-items: center; justify-content: center; flex-shrink: 0; }
+  .affect-icon-wrap svg { width: 24px; height: 24px; }
+  .affect-title { font-weight: 700; font-size: 18px; line-height: 27px; color: #050505; margin-bottom: 4px; }
+  .affect-desc { font-size: 16px; line-height: 24px; color: rgba(5,5,5,0.65); margin: 0; }
+  @media (max-width: 900px) { .affects-inner { flex-direction: column; } }
+  @media (max-width: 767px) { .affects-section { padding: 40px 0; } }
 
   /* COST PER SQFT */
   .sqft-section { background: #F9FAFB; padding: 70px 0; }
@@ -438,43 +440,62 @@
 <section class="affects-section">
   <div class="container">
     <div class="affects-inner">
-      <div>
-        <img src="/c/siding-replacement/images/five-stars.png" alt="5-star rated contractor" class="affects-img" loading="lazy">
+      <div class="affects-left">
+        <img src="/c/siding-replacement/images/ImageWithFallback-1.png" alt="Siding replacement project" loading="lazy">
       </div>
-      <div>
+      <div class="affects-right">
         <h2 class="section-heading">What Affects Siding Cost</h2>
-        <p class="section-text">Several factors influence the total cost of a siding replacement project on Long Island.</p>
-        <div class="affects-grid">
+        <div class="affects-list">
           <div class="affect-item">
-            <svg class="affect-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 48 48" fill="none" aria-hidden="true">
-              <path d="M6 40V20L24 8L42 20V40H30V28H18V40H6Z" stroke="#4473CA" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/>
-            </svg>
-            <p class="affect-title">Home Size</p>
-            <p class="affect-desc">Larger homes require more materials and labor.</p>
+            <div class="affect-icon-wrap">
+              <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none">
+                <path d="M15 21V13C15 12.7348 14.8946 12.4804 14.7071 12.2929C14.5196 12.1054 14.2652 12 14 12H10C9.73478 12 9.48043 12.1054 9.29289 12.2929C9.10536 12.4804 9 12.7348 9 13V21" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                <path d="M3 9.99997C2.99993 9.70904 3.06333 9.42159 3.18579 9.15768C3.30824 8.89378 3.4868 8.65976 3.709 8.47197L10.709 2.47297C11.07 2.16788 11.5274 2.00049 12 2.00049C12.4726 2.00049 12.93 2.16788 13.291 2.47297L20.291 8.47197C20.5132 8.65976 20.6918 8.89378 20.8142 9.15768C20.9367 9.42159 21.0001 9.70904 21 9.99997V19C21 19.5304 20.7893 20.0391 20.4142 20.4142C20.0391 20.7893 19.5304 21 19 21H5C4.46957 21 3.96086 20.7893 3.58579 20.4142C3.21071 20.0391 3 19.5304 3 19V9.99997Z" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+              </svg>
+            </div>
+            <div>
+              <p class="affect-title">Home Size</p>
+              <p class="affect-desc">Larger homes require more materials and labor.</p>
+            </div>
           </div>
           <div class="affect-item">
-            <svg class="affect-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 48 48" fill="none" aria-hidden="true">
-              <rect x="6" y="6" width="36" height="36" rx="4" stroke="#4473CA" stroke-width="4"/>
-              <path d="M16 24H32M24 16V32" stroke="#4473CA" stroke-width="4" stroke-linecap="round"/>
-            </svg>
-            <p class="affect-title">Material Choice</p>
-            <p class="affect-desc">Fiber cement siding generally costs more than vinyl but offers greater durability.</p>
+            <div class="affect-icon-wrap">
+              <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none">
+                <path d="M21.3 15.3C21.5238 15.523 21.7013 15.788 21.8225 16.0797C21.9436 16.3714 22.0059 16.6842 22.0059 17C22.0059 17.3159 21.9436 17.6287 21.8225 17.9204C21.7013 18.2121 21.5238 18.4771 21.3 18.7L18.7 21.3C18.4771 21.5238 18.2121 21.7013 17.9204 21.8225C17.6287 21.9436 17.3159 22.0059 17 22.0059C16.6842 22.0059 16.3714 21.9436 16.0797 21.8225C15.788 21.7013 15.523 21.5238 15.3 21.3L2.70005 8.70005C2.2506 8.24842 1.99829 7.6372 1.99829 7.00005C1.99829 6.36289 2.2506 5.75167 2.70005 5.30005L5.30005 2.70005C5.75167 2.2506 6.36289 1.99829 7.00005 1.99829C7.6372 1.99829 8.24842 2.2506 8.70005 2.70005L21.3 15.3Z" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                <path d="M14.5 12.5L16.5 10.5" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                <path d="M11.5 9.5L13.5 7.5" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                <path d="M8.5 6.5L10.5 4.5" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                <path d="M17.5 15.5L19.5 13.5" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+              </svg>
+            </div>
+            <div>
+              <p class="affect-title">Material Choice</p>
+              <p class="affect-desc">Fiber cement siding generally costs more than vinyl but offers greater durability.</p>
+            </div>
           </div>
           <div class="affect-item">
-            <svg class="affect-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 48 48" fill="none" aria-hidden="true">
-              <path d="M10 38L24 10L38 38H10Z" stroke="#4473CA" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/>
-              <path d="M24 22V28" stroke="#4473CA" stroke-width="4" stroke-linecap="round"/>
-            </svg>
-            <p class="affect-title">Trim &amp; Architectural Details</p>
-            <p class="affect-desc">Board and batten or decorative trim increases project complexity.</p>
+            <div class="affect-icon-wrap">
+              <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none">
+                <path d="M14.7001 6.29998C14.5169 6.48691 14.4142 6.73823 14.4142 6.99998C14.4142 7.26173 14.5169 7.51305 14.7001 7.69998L16.3001 9.29998C16.487 9.48321 16.7383 9.58584 17.0001 9.58584C17.2619 9.58584 17.5132 9.48321 17.7001 9.29998L21.4701 5.52998C21.9729 6.64117 22.1252 7.87921 21.9066 9.07913C21.6879 10.279 21.1088 11.3838 20.2464 12.2463C19.3839 13.1087 18.2792 13.6878 17.0792 13.9064C15.8793 14.1251 14.6413 13.9728 13.5301 13.47L6.6201 20.38C6.22227 20.7778 5.68271 21.0013 5.1201 21.0013C4.55749 21.0013 4.01792 20.7778 3.6201 20.38C3.22227 19.9822 2.99878 19.4426 2.99878 18.88C2.99878 18.3174 3.22227 17.7778 3.6201 17.38L10.5301 10.47C10.0273 9.35879 9.87502 8.12075 10.0936 6.92083C10.3123 5.72092 10.8914 4.61614 11.7538 3.7537C12.6163 2.89127 13.721 2.31215 14.921 2.09352C16.1209 1.8749 17.3589 2.02714 18.4701 2.52998L14.7101 6.28998L14.7001 6.29998Z" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+              </svg>
+            </div>
+            <div>
+              <p class="affect-title">Trim and Architectural Details</p>
+              <p class="affect-desc">Board and batten or decorative trim increases project complexity.</p>
+            </div>
           </div>
           <div class="affect-item">
-            <svg class="affect-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 48 48" fill="none" aria-hidden="true">
-              <path d="M8 16H40M8 16V36C8 37.1046 8.89543 38 10 38H38C39.1046 38 40 37.1046 40 36V16M8 16L12 10H36L40 16" stroke="#4473CA" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/>
-              <path d="M20 26L24 30L28 26" stroke="#4473CA" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/>
-            </svg>
-            <p class="affect-title">Existing Siding Removal</p>
-            <p class="affect-desc">Older siding removal or structural repairs can add cost.</p>
+            <div class="affect-icon-wrap">
+              <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none">
+                <path d="M14.9999 12L6.62694 20.373C6.22911 20.7708 5.68954 20.9943 5.12694 20.9943C4.56433 20.9943 4.02476 20.7708 3.62694 20.373C3.22911 19.9752 3.00562 19.4356 3.00562 18.873C3.00562 18.3104 3.22911 17.7778 3.62694 17.373L11.9999 9" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                <path d="M18 15L22 11" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                <path d="M21.5 11.5L19.586 9.58596C19.2109 9.21098 19.0001 8.70235 19 8.17196V6.99996L16.74 4.73996C15.6245 3.62515 14.115 2.99432 12.538 2.98396L9 2.95996L9.92 3.77996C10.5735 4.35935 11.0967 5.07066 11.4552 5.867C11.8137 6.66335 11.9994 7.52663 12 8.39996V9.99996L14 12H15.172C15.7024 12.0001 16.211 12.2109 16.586 12.586L18.5 14.5" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+              </svg>
+            </div>
+            <div>
+              <p class="affect-title">Removal of Existing Siding</p>
+              <p class="affect-desc">Older siding removal or structural repairs can add cost.</p>
+            </div>
           </div>
         </div>
       </div>
