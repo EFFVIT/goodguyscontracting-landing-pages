@@ -175,24 +175,35 @@
 
   /* COST PER SQFT */
   .sqft-section { background: #F9FAFB; padding: 70px 0; }
-  .sqft-inner { max-width: 720px; }
+  .sqft-inner {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 40px;
+  }
+  .sqft-left { flex: 1 1 0; min-width: 0; }
+  .sqft-right { flex: 1 1 0; min-width: 0; display: flex; align-items: center; justify-content: center; }
+  .sqft-right img { width: 100%; max-width: 480px; display: block; }
   .sqft-callout {
-    background: #fff;
-    border-left: 4px solid #4473CA;
-    border-radius: 0 8px 8px 0;
-    padding: 28px 32px;
+    background: #FF814B;
+    border-radius: 10px;
+    padding: 30px 50px;
     margin: 24px 0 28px;
-    box-shadow: 0 2px 8px rgba(0,0,0,0.06);
+    text-align: center;
   }
   .sqft-number {
     font-family: "Cormorant Garamond", serif;
-    font-size: 48px;
+    font-size: 40px;
     font-weight: 700;
-    line-height: 58px;
-    color: #4473CA;
+    line-height: 72px;
+    color: #fff;
   }
-  .sqft-label { font-size: 16px; color: rgba(5,5,5,0.55); margin-top: 4px; }
-  @media (max-width: 767px) { .sqft-section { padding: 40px 0; } .sqft-number { font-size: 38px; line-height: 46px; } }
+  @media (max-width: 900px) {
+    .sqft-inner { flex-direction: column; }
+    .sqft-right { width: 100%; }
+    .sqft-callout { padding: 20px 30px; }
+  }
+  @media (max-width: 767px) { .sqft-section { padding: 40px 0; } .sqft-number { font-size: 36px; line-height: 42px; } }
 
   /* PROJECT EXAMPLES */
   .projects-section { background: #fff; padding: 70px 0; }
@@ -475,14 +486,18 @@
 <section class="sqft-section">
   <div class="container">
     <div class="sqft-inner">
-      <h2 class="section-heading">Hardie Siding Cost Per Square Foot</h2>
-      <p class="section-text">James Hardie siding typically costs between:</p>
-      <div class="sqft-callout">
-        <p class="sqft-number">$12–$18</p>
-        <p class="sqft-label">per square foot installed</p>
+      <div class="sqft-left">
+        <h2 class="section-heading">Hardie Siding Cost Per Square Foot</h2>
+        <p class="section-text">James Hardie siding typically costs between:</p>
+        <div class="sqft-callout">
+          <p class="sqft-number">$12 – $18 per square foot installed</p>
+        </div>
+        <p class="section-text">The final price depends on the size of the home, installation details, trim work, and removal of existing siding.</p>
+        <a href="#estimate-form" class="btn btn-blue">Get My Free Siding Estimate</a>
       </div>
-      <p class="section-text">Final price varies by home size, installation complexity, trim work, and existing siding removal.</p>
-      <a href="#estimate-form" class="btn btn-blue">Get My Free Siding Estimate</a>
+      <div class="sqft-right">
+        <img src="/c/siding-replacement/images/Container-17.png" alt="Hardie siding cost breakdown" loading="lazy">
+      </div>
     </div>
   </div>
 </section>
