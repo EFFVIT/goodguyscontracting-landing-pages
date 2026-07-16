@@ -1200,7 +1200,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
   data-widget-id="6683c891dd58566324bbf8d8"></script>
 
 <!-- GHL Form Embed Script -->
-<script src="https://link.msgsndr.com/js/form_embed.js"></script>
+<!-- form_embed.js removed (crashes on src swap, blanks widget) -->
 
 <script>
   (function () {
@@ -1224,6 +1224,39 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
   }
 </script>
 
+
+<!-- GHL form fix: param passthrough (gclid/gbraid/wbraid/UTMs + gclid-of alias) and
+     iframe-resizer parent handshake. form_embed.js removed: it crashes on the
+     param-injection src swap and its dead handshake leaves the widget invisible. -->
+<script src="https://cdn.jsdelivr.net/npm/iframe-resizer@4.3.9/js/iframeResizer.min.js"></script>
+<script>
+(function () {
+  var KEYS = ['gclid', 'gbraid', 'wbraid', 'utm_source', 'utm_medium', 'utm_campaign', 'utm_term', 'utm_content'];
+  var url = new URLSearchParams(window.location.search);
+  var out = new URLSearchParams();
+  KEYS.forEach(function (k) {
+    var v = url.get(k) || sessionStorage.getItem(k);
+    if (v) { try { sessionStorage.setItem(k, v); } catch (e) {} out.set(k, v); }
+  });
+  var g = out.get('gclid');
+  if (g) { out.set('gclid-of', g); out.set('gclidof', g); }
+  var frames = document.querySelectorAll('iframe[src*="api.leadconnectorhq.com/widget/form"]');
+  frames.forEach(function (f) {
+    if (f.getBoundingClientRect().height < 300) { f.style.height = '620px'; f.style.display = 'block'; }
+    if (out.toString()) {
+      f.src = f.src + (f.src.indexOf('?') === -1 ? '?' : '&') + out.toString();
+    }
+  });
+  function initResize(attempt) {
+    if (window.iFrameResize) {
+      frames.forEach(function (f) { window.iFrameResize({ checkOrigin: false, log: false }, '#' + f.id); });
+    } else if (attempt < 25) {
+      setTimeout(function () { initResize(attempt + 1); }, 200);
+    }
+  }
+  initResize(0);
+})();
+</script>
 </body>
 </html>
 
