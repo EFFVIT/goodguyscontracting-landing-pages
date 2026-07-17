@@ -33,7 +33,7 @@ export default function SidingReplacementClient() {
         <div className="container">
           <div className="header-inner">
             <a href="https://start.goodguyscontracting.com/" className="header-logo">
-              <img src="/c/siding-replacement/images/logo.png" alt="Good Guys Contracting" width="48" height="48" />
+              <img src="/img/siding-replacement/logo.png" alt="Good Guys Contracting" width="48" height="48" />
             </a>
             <div className="header-actions">
               <a href="#estimate-form" className="btn btn-blue">Get My Free Hardie Siding Quote</a>
@@ -57,7 +57,7 @@ export default function SidingReplacementClient() {
               <p className="hero-form-note">Get a professional estimate based on your home size, siding material, and installation details.</p>
             </div>
             <div className="hero-right">
-              <img src="/c/siding-replacement/images/hero-house.png" alt="Siding replacement project on Long Island" className="hero-house-img" loading="eager" />
+              <img src="/img/siding-replacement/hero-house.png" alt="Siding replacement project on Long Island" className="hero-house-img" loading="eager" />
             </div>
           </div>
         </div>
@@ -134,7 +134,7 @@ export default function SidingReplacementClient() {
         <div className="container">
           <div className="affects-inner">
             <div className="affects-left">
-              <img src="/c/siding-replacement/images/ImageWithFallback-1.png" alt="Siding replacement project" loading="lazy" />
+              <img src="/img/siding-replacement/ImageWithFallback-1.png" alt="Siding replacement project" loading="lazy" />
             </div>
             <div className="affects-right">
               <h2 className="section-heading">What Affects Siding Cost</h2>
@@ -210,7 +210,7 @@ export default function SidingReplacementClient() {
               <a href="#estimate-form" className="btn btn-blue">Get My Free Siding Estimate</a>
             </div>
             <div className="sqft-right">
-              <img src="/c/siding-replacement/images/Container-17.png" alt="Hardie siding cost breakdown" loading="lazy" />
+              <img src="/img/siding-replacement/Container-17.png" alt="Hardie siding cost breakdown" loading="lazy" />
             </div>
           </div>
         </div>
@@ -224,9 +224,9 @@ export default function SidingReplacementClient() {
             <p className="section-text">Examples of siding upgrades completed for Long Island homeowners.</p>
           </div>
           <div className="projects-grid">
-            <img src="/c/siding-replacement/images/Container-18.png" alt="Siding project example 1" className="project-img" loading="lazy" />
-            <img src="/c/siding-replacement/images/Container-19.png" alt="Siding project example 2" className="project-img" loading="lazy" />
-            <img src="/c/siding-replacement/images/Container-20.png" alt="Siding project example 3" className="project-img" loading="lazy" />
+            <img src="/img/siding-replacement/Container-18.png" alt="Siding project example 1" className="project-img" loading="lazy" />
+            <img src="/img/siding-replacement/Container-19.png" alt="Siding project example 2" className="project-img" loading="lazy" />
+            <img src="/img/siding-replacement/Container-20.png" alt="Siding project example 3" className="project-img" loading="lazy" />
           </div>
           <div className="projects-cta">
             <a href="#estimate-form" className="btn btn-blue">Get My Free Siding Estimate</a>
@@ -245,7 +245,7 @@ export default function SidingReplacementClient() {
             <div className="testimonials-right">
               <div className="tcard">
                 <div className="tcard-stars">
-                  <img src="/c/siding-replacement/images/google-stars.png" alt="5 stars" width="120" height="20" loading="lazy" />
+                  <img src="/img/siding-replacement/google-stars.png" alt="5 stars" width="120" height="20" loading="lazy" />
                 </div>
                 <p className="tcard-quote">"The staff at Good Guys Contracting was extremely professional and the craftsmanship was so great that people keep stopping by to mention how beautiful my house looks."</p>
                 <p className="tcard-name">Danielle M.</p>
@@ -253,7 +253,7 @@ export default function SidingReplacementClient() {
               </div>
               <div className="tcard">
                 <div className="tcard-stars">
-                  <img src="/c/siding-replacement/images/google-stars.png" alt="5 stars" width="120" height="20" loading="lazy" />
+                  <img src="/img/siding-replacement/google-stars.png" alt="5 stars" width="120" height="20" loading="lazy" />
                 </div>
                 <p className="tcard-quote">"Good Guys Contracting prepared me for the scope of the job in advance. They did the job exactly as they stated they and the job were completed flawlessly. Their team approach made the job go very smoothly."</p>
                 <p className="tcard-name">Hank B.</p>
@@ -320,7 +320,7 @@ export default function SidingReplacementClient() {
           <div className="footer-inner">
             <div>
               <a href="https://start.goodguyscontracting.com/">
-                <img src="/c/siding-replacement/images/logo.png" alt="Good Guys Contracting" className="footer-logo" loading="lazy" />
+                <img src="/img/siding-replacement/logo.png" alt="Good Guys Contracting" className="footer-logo" loading="lazy" />
               </a>
               <p className="footer-brand">Good Guys Contracting</p>
               <p className="footer-tagline">Professional siding installation services for Long Island homeowners.</p>

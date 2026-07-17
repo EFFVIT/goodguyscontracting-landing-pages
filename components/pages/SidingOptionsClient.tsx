@@ -33,7 +33,7 @@ export default function SidingOptionsClient() {
         <div className="container">
           <div className="header-inner">
             <a href="https://start.goodguyscontracting.com/" className="header-logo">
-              <img src="/c/siding-options/images/logo.png" alt="Good Guys Contracting" width="48" height="48" />
+              <img src="/img/siding-options/logo.png" alt="Good Guys Contracting" width="48" height="48" />
             </a>
             <div className="header-actions">
               <a href="#estimate-form" className="btn btn-blue">Get My Free Siding Estimate</a>
@@ -63,8 +63,8 @@ export default function SidingOptionsClient() {
       
             
             <div className="hero-right">
-              <img src="/c/siding-options/images/hero-house.png" alt="Siding replacement project" className="hero-house-img" width="607" height="611" loading="eager" />
-              <img src="/c/siding-options/images/five-stars.png" alt="5-star ratings" className="hero-stars-img" width="320" height="60" loading="eager" />
+              <img src="/img/siding-options/hero-house.png" alt="Siding replacement project" className="hero-house-img" width="607" height="611" loading="eager" />
+              <img src="/img/siding-options/five-stars.png" alt="5-star ratings" className="hero-stars-img" width="320" height="60" loading="eager" />
             </div>
       
           </div>
@@ -118,7 +118,7 @@ export default function SidingOptionsClient() {
           <div className="matters-inner">
       
             <div>
-              <img src="/c/siding-options/images/siding-comparison.png" alt="Siding options comparison" className="matters-img" width="740" height="576" loading="lazy" />
+              <img src="/img/siding-options/siding-comparison.png" alt="Siding options comparison" className="matters-img" width="740" height="576" loading="lazy" />
             </div>
       
             <div>
@@ -241,7 +241,7 @@ export default function SidingOptionsClient() {
             </div>
       
             <div className="fiber-img-col">
-              <img src="/c/siding-options/images/installer-photo.png" alt="Professional siding installer" className="fiber-img" width="1083" height="1422" loading="lazy" />
+              <img src="/img/siding-options/installer-photo.png" alt="Professional siding installer" className="fiber-img" width="1083" height="1422" loading="lazy" />
             </div>
       
           </div>
@@ -286,7 +286,7 @@ export default function SidingOptionsClient() {
       
               <div className="tcard">
                 <div className="tcard-stars">
-                  <img src="/c/siding-options/images/google-stars.png" alt="5 stars" width="120" height="20" loading="lazy" />
+                  <img src="/img/siding-options/google-stars.png" alt="5 stars" width="120" height="20" loading="lazy" />
                 </div>
                 <p className="tcard-quote">"The staff at Good Guys Contracting was extremely professional and the craftsmanship was so great that people keep stopping by to mention how beautiful my house looks."</p>
                 <p className="tcard-name">Danielle M.</p>
@@ -295,7 +295,7 @@ export default function SidingOptionsClient() {
       
               <div className="tcard">
                 <div className="tcard-stars">
-                  <img src="/c/siding-options/images/google-stars.png" alt="5 stars" width="120" height="20" loading="lazy" />
+                  <img src="/img/siding-options/google-stars.png" alt="5 stars" width="120" height="20" loading="lazy" />
                 </div>
                 <p className="tcard-quote">"Good Guys Contracting prepared me for the scope of the job in advance. They did the job exactly as they stated they and the job were completed flawlessly. Their team approach made the job go very smoothly."</p>
                 <p className="tcard-name">Hank B.</p>
@@ -371,11 +371,11 @@ export default function SidingOptionsClient() {
       
             <div>
               <a href="https://start.goodguyscontracting.com/">
-                <img src="/c/siding-options/images/logo.png" alt="Good Guys Contracting" className="footer-logo" width="496" height="500" loading="lazy" />
+                <img src="/img/siding-options/logo.png" alt="Good Guys Contracting" className="footer-logo" width="496" height="500" loading="lazy" />
               </a>
               <p className="footer-brand">The Good Guys</p>
               <p className="footer-tagline">Expert siding installation and home renovation services for Long Island homeowners.</p>
-              <img src="/c/siding-options/images/five-stars.png" alt="5-star rated contractor" style={{ maxWidth: '200px', marginTop: '14px' }} loading="lazy" />
+              <img src="/img/siding-options/five-stars.png" alt="5-star rated contractor" style={{ maxWidth: '200px', marginTop: '14px' }} loading="lazy" />
             </div>
       
             <div>
