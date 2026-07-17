@@ -1,0 +1,356 @@
+'use client'
+import { Suspense, useEffect } from 'react'
+import GhlForm from '../GhlForm'
+import GclidCapture from '../GclidCapture'
+import './siding-replacement.css'
+
+function toggleFaqClick(e: React.MouseEvent<HTMLButtonElement>) {
+  const item = e.currentTarget.closest('.faq-item')
+  if (!item) return
+  const isOpen = item.classList.contains('open')
+  document.querySelectorAll('.faq-item.open').forEach(i => i.classList.remove('open'))
+  if (!isOpen) item.classList.add('open')
+}
+
+function expandAllFaqs() {
+  document.querySelectorAll('.faq-item').forEach(i => i.classList.add('open'))
+}
+
+export default function SidingReplacementClient() {
+  useEffect(() => {
+    const header = document.getElementById('site-header')
+    if (!header) return
+    const onScroll = () => header.classList.toggle('scrolled', window.scrollY > 60)
+    window.addEventListener('scroll', onScroll, { passive: true })
+    onScroll()
+    return () => window.removeEventListener('scroll', onScroll)
+  }, [])
+
+  return (
+    <>
+      <Suspense fallback={null}><GclidCapture /></Suspense>
+      <header className="site-header" id="site-header">
+        <div className="container">
+          <div className="header-inner">
+            <a href="https://start.goodguyscontracting.com/" className="header-logo">
+              <img src="/c/siding-replacement/images/logo.png" alt="Good Guys Contracting" width="48" height="48" />
+            </a>
+            <div className="header-actions">
+              <a href="#estimate-form" className="btn btn-blue">Get My Free Hardie Siding Quote</a>
+              <a href="tel:+16318406299" className="btn btn-ghost-dark">(631) 840-6299</a>
+            </div>
+          </div>
+        </div>
+      </header>
+      
+      
+      <section className="hero-section">
+        <div className="container">
+          <div className="hero-inner">
+            <div className="hero-left">
+              <h1 className="hero-h1">How Much Does Siding Replacement Cost on Long Island?</h1>
+              <p className="hero-sub">Learn what affects siding pricing and how to estimate the cost of replacing your home's exterior.</p>
+              <p className="hero-form-label">CONTACT US FOR A QUOTE WITHIN 24 HOURS</p>
+              <div id="estimate-form">
+                <GhlForm formId="AVYCUCQwKb3cKxeNKnBv" height={620} formName="How Much Does Siding Replacement Cost on" />
+              </div>
+              <p className="hero-form-note">Get a professional estimate based on your home size, siding material, and installation details.</p>
+            </div>
+            <div className="hero-right">
+              <img src="/c/siding-replacement/images/hero-house.png" alt="Siding replacement project on Long Island" className="hero-house-img" loading="eager" />
+            </div>
+          </div>
+        </div>
+      </section>
+      
+      
+      <section className="trust-section">
+        <div className="container">
+          <div className="trust-inner">
+            <div className="trust-badge">
+              <svg xmlns="http://www.w3.org/2000/svg" width="48" height="48" viewBox="0 0 48 48" fill="none" aria-hidden="true">
+                <path d="M40 26C40 36 33 41 24.68 43.9C24.2443 44.0476 23.7711 44.0406 23.34 43.88C15 41 8 36 8 26V12C8 11.4696 8.21071 10.9608 8.58579 10.5858C8.96086 10.2107 9.46957 9.99998 10 9.99998C14 9.99998 19 7.59998 22.48 4.55998C22.9037 4.19798 23.4427 3.99908 24 3.99908C24.5573 3.99908 25.0963 4.19798 25.52 4.55998C29.02 7.61998 34 9.99998 38 9.99998C38.5304 9.99998 39.0391 10.2107 39.4142 10.5858C39.7893 10.9608 40 11.4696 40 12V26Z" stroke="#4473CA" strokeWidth="4" strokeLinecap="round" strokeLinejoin="round"/>
+              </svg>
+              <span className="trust-badge-title">Licensed &amp; Insured</span>
+            </div>
+            <div className="trust-badge">
+              <svg xmlns="http://www.w3.org/2000/svg" width="48" height="48" viewBox="0 0 48 48" fill="none" aria-hidden="true">
+                <path d="M40 20C40 29.986 28.922 40.386 25.202 43.598C24.8554 43.8586 24.4336 43.9995 24 43.9995C23.5664 43.9995 23.1446 43.8586 22.798 43.598C19.078 40.386 8 29.986 8 20C8 15.7565 9.68571 11.6869 12.6863 8.68629C15.6869 5.68571 19.7565 4 24 4C28.2435 4 32.3131 5.68571 35.3137 8.68629C38.3143 11.6869 40 15.7565 40 20Z" stroke="#4473CA" strokeWidth="4" strokeLinecap="round" strokeLinejoin="round"/>
+                <path d="M24 26C27.3137 26 30 23.3137 30 20C30 16.6863 27.3137 14 24 14C20.6863 14 18 16.6863 18 20C18 23.3137 20.6863 26 24 26Z" stroke="#4473CA" strokeWidth="4" strokeLinecap="round" strokeLinejoin="round"/>
+              </svg>
+              <span className="trust-badge-title">Long Island Local</span>
+            </div>
+            <div className="trust-badge">
+              <svg xmlns="http://www.w3.org/2000/svg" width="48" height="48" viewBox="0 0 48 48" fill="none" aria-hidden="true">
+                <path d="M30 4H12C10.9391 4 9.92172 4.42143 9.17157 5.17157C8.42143 5.92172 8 6.93913 8 8V40C8 41.0609 8.42143 42.0783 9.17157 42.8284C9.92172 43.5786 10.9391 44 12 44H36C37.0609 44 38.0783 43.5786 38.8284 42.8284C39.5786 42.0783 40 41.0609 40 40V14L30 4Z" stroke="#4473CA" strokeWidth="4" strokeLinecap="round" strokeLinejoin="round"/>
+                <path d="M28 4V12C28 13.0609 28.4214 14.0783 29.1716 14.8284C29.9217 15.5786 30.9391 16 32 16H40" stroke="#4473CA" strokeWidth="4" strokeLinecap="round" strokeLinejoin="round"/>
+                <path d="M18 30L22 34L30 26" stroke="#4473CA" strokeWidth="4" strokeLinecap="round" strokeLinejoin="round"/>
+              </svg>
+              <span className="trust-badge-title">Free Consultations</span>
+            </div>
+            <div className="trust-badge">
+              <svg xmlns="http://www.w3.org/2000/svg" width="48" height="48" viewBox="0 0 48 48" fill="none" aria-hidden="true">
+                <path d="M30.954 25.78L33.984 42.832C34.0179 43.0328 33.9898 43.2392 33.9032 43.4235C33.8167 43.6079 33.676 43.7614 33.4999 43.8636C33.3237 43.9658 33.1206 44.0118 32.9176 43.9954C32.7146 43.9791 32.5215 43.9011 32.364 43.772L25.204 38.398C24.8583 38.1398 24.4384 38.0003 24.007 38.0003C23.5755 38.0003 23.1556 38.1398 22.81 38.398L15.638 43.77C15.4806 43.8989 15.2877 43.9767 15.085 43.9931C14.8822 44.0095 14.6793 43.9637 14.5033 43.8618C14.3273 43.7598 14.1865 43.6067 14.0998 43.4227C14.0131 43.2387 13.9846 43.0327 14.018 42.832L17.046 25.78" stroke="#4473CA" strokeWidth="4" strokeLinecap="round" strokeLinejoin="round"/>
+                <path d="M24 28C30.6274 28 36 22.6274 36 16C36 9.37258 30.6274 4 24 4C17.3726 4 12 9.37258 12 16C12 22.6274 17.3726 28 24 28Z" stroke="#4473CA" strokeWidth="4" strokeLinecap="round" strokeLinejoin="round"/>
+              </svg>
+              <span className="trust-badge-title">Quality Craftsmanship</span>
+            </div>
+          </div>
+        </div>
+      </section>
+      
+      
+      <section className="pricing-section">
+        <div className="container">
+          <div className="pricing-intro">
+            <h2 className="section-heading">Average Siding Replacement Cost</h2>
+            <p className="section-text">The cost of siding replacement depends on several factors including home size, material choice, and installation complexity.</p>
+          </div>
+          <div className="pricing-grid">
+            <div className="price-card">
+              <p className="price-card-title">Vinyl Siding</p>
+              <p className="price-card-range">$25,000–$40,000</p>
+              <p className="price-card-desc">Lower upfront cost but typically shorter lifespan.</p>
+            </div>
+            <div className="price-card">
+              <p className="price-card-title">Fiber Cement / Hardie Siding</p>
+              <p className="price-card-range">$40,000–$65,000</p>
+              <p className="price-card-desc">Durable, weather resistant siding option popular among Long Island homeowners.</p>
+            </div>
+            <div className="price-card">
+              <p className="price-card-title">Premium Siding Projects</p>
+              <p className="price-card-range">$65,000+</p>
+              <p className="price-card-desc">Larger homes or projects with complex trim and architectural details.</p>
+            </div>
+          </div>
+          <div style={{ textAlign: 'center', marginTop: '36px' }}>
+            <a href="#estimate-form" className="btn btn-blue">Get My Free Hardie Siding Quote</a>
+          </div>
+        </div>
+      </section>
+      
+      
+      <section className="affects-section">
+        <div className="container">
+          <div className="affects-inner">
+            <div className="affects-left">
+              <img src="/c/siding-replacement/images/ImageWithFallback-1.png" alt="Siding replacement project" loading="lazy" />
+            </div>
+            <div className="affects-right">
+              <h2 className="section-heading">What Affects Siding Cost</h2>
+              <div className="affects-list">
+                <div className="affect-item">
+                  <div className="affect-icon-wrap">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none">
+                      <path d="M15 21V13C15 12.7348 14.8946 12.4804 14.7071 12.2929C14.5196 12.1054 14.2652 12 14 12H10C9.73478 12 9.48043 12.1054 9.29289 12.2929C9.10536 12.4804 9 12.7348 9 13V21" stroke="white" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
+                      <path d="M3 9.99997C2.99993 9.70904 3.06333 9.42159 3.18579 9.15768C3.30824 8.89378 3.4868 8.65976 3.709 8.47197L10.709 2.47297C11.07 2.16788 11.5274 2.00049 12 2.00049C12.4726 2.00049 12.93 2.16788 13.291 2.47297L20.291 8.47197C20.5132 8.65976 20.6918 8.89378 20.8142 9.15768C20.9367 9.42159 21.0001 9.70904 21 9.99997V19C21 19.5304 20.7893 20.0391 20.4142 20.4142C20.0391 20.7893 19.5304 21 19 21H5C4.46957 21 3.96086 20.7893 3.58579 20.4142C3.21071 20.0391 3 19.5304 3 19V9.99997Z" stroke="white" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
+                    </svg>
+                  </div>
+                  <div>
+                    <p className="affect-title">Home Size</p>
+                    <p className="affect-desc">Larger homes require more materials and labor.</p>
+                  </div>
+                </div>
+                <div className="affect-item">
+                  <div className="affect-icon-wrap">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none">
+                      <path d="M21.3 15.3C21.5238 15.523 21.7013 15.788 21.8225 16.0797C21.9436 16.3714 22.0059 16.6842 22.0059 17C22.0059 17.3159 21.9436 17.6287 21.8225 17.9204C21.7013 18.2121 21.5238 18.4771 21.3 18.7L18.7 21.3C18.4771 21.5238 18.2121 21.7013 17.9204 21.8225C17.6287 21.9436 17.3159 22.0059 17 22.0059C16.6842 22.0059 16.3714 21.9436 16.0797 21.8225C15.788 21.7013 15.523 21.5238 15.3 21.3L2.70005 8.70005C2.2506 8.24842 1.99829 7.6372 1.99829 7.00005C1.99829 6.36289 2.2506 5.75167 2.70005 5.30005L5.30005 2.70005C5.75167 2.2506 6.36289 1.99829 7.00005 1.99829C7.6372 1.99829 8.24842 2.2506 8.70005 2.70005L21.3 15.3Z" stroke="white" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
+                      <path d="M14.5 12.5L16.5 10.5" stroke="white" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
+                      <path d="M11.5 9.5L13.5 7.5" stroke="white" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
+                      <path d="M8.5 6.5L10.5 4.5" stroke="white" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
+                      <path d="M17.5 15.5L19.5 13.5" stroke="white" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
+                    </svg>
+                  </div>
+                  <div>
+                    <p className="affect-title">Material Choice</p>
+                    <p className="affect-desc">Fiber cement siding generally costs more than vinyl but offers greater durability.</p>
+                  </div>
+                </div>
+                <div className="affect-item">
+                  <div className="affect-icon-wrap">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none">
+                      <path d="M14.7001 6.29998C14.5169 6.48691 14.4142 6.73823 14.4142 6.99998C14.4142 7.26173 14.5169 7.51305 14.7001 7.69998L16.3001 9.29998C16.487 9.48321 16.7383 9.58584 17.0001 9.58584C17.2619 9.58584 17.5132 9.48321 17.7001 9.29998L21.4701 5.52998C21.9729 6.64117 22.1252 7.87921 21.9066 9.07913C21.6879 10.279 21.1088 11.3838 20.2464 12.2463C19.3839 13.1087 18.2792 13.6878 17.0792 13.9064C15.8793 14.1251 14.6413 13.9728 13.5301 13.47L6.6201 20.38C6.22227 20.7778 5.68271 21.0013 5.1201 21.0013C4.55749 21.0013 4.01792 20.7778 3.6201 20.38C3.22227 19.9822 2.99878 19.4426 2.99878 18.88C2.99878 18.3174 3.22227 17.7778 3.6201 17.38L10.5301 10.47C10.0273 9.35879 9.87502 8.12075 10.0936 6.92083C10.3123 5.72092 10.8914 4.61614 11.7538 3.7537C12.6163 2.89127 13.721 2.31215 14.921 2.09352C16.1209 1.8749 17.3589 2.02714 18.4701 2.52998L14.7101 6.28998L14.7001 6.29998Z" stroke="white" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
+                    </svg>
+                  </div>
+                  <div>
+                    <p className="affect-title">Trim and Architectural Details</p>
+                    <p className="affect-desc">Board and batten or decorative trim increases project complexity.</p>
+                  </div>
+                </div>
+                <div className="affect-item">
+                  <div className="affect-icon-wrap">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none">
+                      <path d="M14.9999 12L6.62694 20.373C6.22911 20.7708 5.68954 20.9943 5.12694 20.9943C4.56433 20.9943 4.02476 20.7708 3.62694 20.373C3.22911 19.9752 3.00562 19.4356 3.00562 18.873C3.00562 18.3104 3.22911 17.7778 3.62694 17.373L11.9999 9" stroke="white" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
+                      <path d="M18 15L22 11" stroke="white" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
+                      <path d="M21.5 11.5L19.586 9.58596C19.2109 9.21098 19.0001 8.70235 19 8.17196V6.99996L16.74 4.73996C15.6245 3.62515 14.115 2.99432 12.538 2.98396L9 2.95996L9.92 3.77996C10.5735 4.35935 11.0967 5.07066 11.4552 5.867C11.8137 6.66335 11.9994 7.52663 12 8.39996V9.99996L14 12H15.172C15.7024 12.0001 16.211 12.2109 16.586 12.586L18.5 14.5" stroke="white" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
+                    </svg>
+                  </div>
+                  <div>
+                    <p className="affect-title">Removal of Existing Siding</p>
+                    <p className="affect-desc">Older siding removal or structural repairs can add cost.</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+      
+      
+      <section className="sqft-section">
+        <div className="container">
+          <div className="sqft-inner">
+            <div className="sqft-left">
+              <h2 className="section-heading">Hardie Siding Cost Per Square Foot</h2>
+              <p className="section-text">James Hardie siding typically costs between:</p>
+              <div className="sqft-callout">
+                <p className="sqft-number">$12 – $18 per square foot installed</p>
+              </div>
+              <p className="section-text">The final price depends on the size of the home, installation details, trim work, and removal of existing siding.</p>
+              <a href="#estimate-form" className="btn btn-blue">Get My Free Siding Estimate</a>
+            </div>
+            <div className="sqft-right">
+              <img src="/c/siding-replacement/images/Container-17.png" alt="Hardie siding cost breakdown" loading="lazy" />
+            </div>
+          </div>
+        </div>
+      </section>
+      
+      
+      <section className="projects-section">
+        <div className="container">
+          <div className="projects-header">
+            <h2 className="section-heading">Real Siding Project Examples</h2>
+            <p className="section-text">Examples of siding upgrades completed for Long Island homeowners.</p>
+          </div>
+          <div className="projects-grid">
+            <img src="/c/siding-replacement/images/Container-18.png" alt="Siding project example 1" className="project-img" loading="lazy" />
+            <img src="/c/siding-replacement/images/Container-19.png" alt="Siding project example 2" className="project-img" loading="lazy" />
+            <img src="/c/siding-replacement/images/Container-20.png" alt="Siding project example 3" className="project-img" loading="lazy" />
+          </div>
+          <div className="projects-cta">
+            <a href="#estimate-form" className="btn btn-blue">Get My Free Siding Estimate</a>
+          </div>
+        </div>
+      </section>
+      
+      
+      <section className="testimonials-section">
+        <div className="container">
+          <div className="testimonials-inner">
+            <div className="testimonials-left">
+              <h2 className="section-heading">What Homeowners Say</h2>
+              <p className="testimonials-left-sub">Real feedback from satisfied Long Island homeowners</p>
+            </div>
+            <div className="testimonials-right">
+              <div className="tcard">
+                <div className="tcard-stars">
+                  <img src="/c/siding-replacement/images/google-stars.png" alt="5 stars" width="120" height="20" loading="lazy" />
+                </div>
+                <p className="tcard-quote">"The staff at Good Guys Contracting was extremely professional and the craftsmanship was so great that people keep stopping by to mention how beautiful my house looks."</p>
+                <p className="tcard-name">Danielle M.</p>
+                <p className="tcard-location">Long Beach, NY</p>
+              </div>
+              <div className="tcard">
+                <div className="tcard-stars">
+                  <img src="/c/siding-replacement/images/google-stars.png" alt="5 stars" width="120" height="20" loading="lazy" />
+                </div>
+                <p className="tcard-quote">"Good Guys Contracting prepared me for the scope of the job in advance. They did the job exactly as they stated they and the job were completed flawlessly. Their team approach made the job go very smoothly."</p>
+                <p className="tcard-name">Hank B.</p>
+                <p className="tcard-location">Westhampton, NY</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+      
+      
+      <section className="faq-section">
+        <div className="container">
+          <div className="faq-inner">
+            <div className="faq-left">
+              <h2 className="section-heading">Frequently Asked Questions</h2>
+            </div>
+            <div className="faq-list">
+              <div className="faq-item">
+                <button className="faq-btn" onClick={toggleFaqClick}>
+                  Do you sell siding materials directly?
+                  <svg className="faq-chevron" width="18" height="18" viewBox="0 0 448 512" fill="#717182" aria-hidden="true"><path d="M207.029 381.476L12.686 187.132c-9.373-9.373-9.373-24.569 0-33.941l22.667-22.667c9.357-9.357 24.522-9.375 33.901-.04L224 284.505l154.745-154.021c9.379-9.335 24.544-9.317 33.901.04l22.667 22.667c9.373 9.373 9.373 24.569 0 33.941L240.971 381.476c-9.373 9.372-24.569 9.372-33.942 0z"/></svg>
+                </button>
+                <div className="faq-answer">No, Good Guys Contracting is an installation contractor only. We do not sell or supply siding materials. We provide complete professional installation of James Hardie fiber cement siding for Long Island homeowners.</div>
+              </div>
+              <div className="faq-item">
+                <button className="faq-btn" onClick={toggleFaqClick}>
+                  How much does Hardie siding cost?
+                  <svg className="faq-chevron" width="18" height="18" viewBox="0 0 448 512" fill="#717182" aria-hidden="true"><path d="M207.029 381.476L12.686 187.132c-9.373-9.373-9.373-24.569 0-33.941l22.667-22.667c9.357-9.357 24.522-9.375 33.901-.04L224 284.505l154.745-154.021c9.379-9.335 24.544-9.317 33.901.04l22.667 22.667c9.373 9.373 9.373 24.569 0 33.941L240.971 381.476c-9.373 9.372-24.569 9.372-33.942 0z"/></svg>
+                </button>
+                <div className="faq-answer">James Hardie siding typically ranges from $12–$18 per square foot installed depending on home size and project complexity.</div>
+              </div>
+              <div className="faq-item">
+                <button className="faq-btn" onClick={toggleFaqClick}>
+                  How long does siding replacement take?
+                  <svg className="faq-chevron" width="18" height="18" viewBox="0 0 448 512" fill="#717182" aria-hidden="true"><path d="M207.029 381.476L12.686 187.132c-9.373-9.373-9.373-24.569 0-33.941l22.667-22.667c9.357-9.357 24.522-9.375 33.901-.04L224 284.505l154.745-154.021c9.379-9.335 24.544-9.317 33.901.04l22.667 22.667c9.373 9.373 9.373 24.569 0 33.941L240.971 381.476c-9.373 9.372-24.569 9.372-33.942 0z"/></svg>
+                </button>
+                <div className="faq-answer">Most siding projects take one to two weeks depending on the home.</div>
+              </div>
+              <div className="faq-item">
+                <button className="faq-btn" onClick={toggleFaqClick}>
+                  Is fiber cement siding worth the cost?
+                  <svg className="faq-chevron" width="18" height="18" viewBox="0 0 448 512" fill="#717182" aria-hidden="true"><path d="M207.029 381.476L12.686 187.132c-9.373-9.373-9.373-24.569 0-33.941l22.667-22.667c9.357-9.357 24.522-9.375 33.901-.04L224 284.505l154.745-154.021c9.379-9.335 24.544-9.317 33.901.04l22.667 22.667c9.373 9.373 9.373 24.569 0 33.941L240.971 381.476c-9.373 9.372-24.569 9.372-33.942 0z"/></svg>
+                </button>
+                <div className="faq-answer">Fiber cement siding offers long durability and lower maintenance compared to many alternatives.</div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+      
+      
+      <section className="cta-section">
+        <div className="container">
+          <h2 className="cta-heading">The best way to determine siding cost is with a professional estimate.</h2>
+          <p className="cta-sub">Our team can inspect your home and provide a clear project quote.</p>
+          <a href="#estimate-form" className="btn btn-blue">Get My Free Siding Estimate</a>
+        </div>
+      </section>
+      
+      
+      <footer className="site-footer">
+        <div className="container">
+          <div className="footer-inner">
+            <div>
+              <a href="https://start.goodguyscontracting.com/">
+                <img src="/c/siding-replacement/images/logo.png" alt="Good Guys Contracting" className="footer-logo" loading="lazy" />
+              </a>
+              <p className="footer-brand">Good Guys Contracting</p>
+              <p className="footer-tagline">Professional siding installation services for Long Island homeowners.</p>
+            </div>
+            <div>
+              <p className="footer-col-head">Contact</p>
+              <ul className="footer-contact-list">
+                <li><a href="tel:+16318406299">(631) 840-6299</a></li>
+                <li><a href="mailto:info@goodguyscontracting.com">info@goodguyscontracting.com</a></li>
+              </ul>
+            </div>
+            <div>
+              <p className="footer-col-head">Service Area</p>
+              <ul className="footer-contact-list">
+                <li><a href="https://maps.app.goo.gl/4pz8i5c7hagk5sst6" target="_blank" rel="noopener">Long Island, NY</a></li>
+                <li><a href="https://maps.app.goo.gl/6jFDSzJvCSyDAndN6" target="_blank" rel="noopener">Suffolk County, NY</a></li>
+                <li><a href="https://maps.app.goo.gl/zHRAWQmozucZxmjo6" target="_blank" rel="noopener">Nassau County, NY</a></li>
+              </ul>
+            </div>
+          </div>
+          <div className="footer-bottom">
+            <span>&#169; 2026 Good Guys Contracting. All rights reserved.</span>
+            <div className="footer-legal">
+              <a href="https://more.goodguyscontracting.com/privacy-policy/">Privacy Policy</a>
+              <a href="https://more.goodguyscontracting.com/cookie-policy/">Cookie Policy</a>
+              <a href="https://more.goodguyscontracting.com/terms-of-service/">Terms of Service</a>
+            </div>
+          </div>
+        </div>
+      </footer>
+    </>
+  )
+}

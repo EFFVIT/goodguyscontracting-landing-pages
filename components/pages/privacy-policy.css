@@ -1,0 +1,32 @@
+
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    body { font-family: "Inter", "Helvetica Neue", Arial, sans-serif; font-size: 16px; line-height: 1.7; color: #1a1a1a; background: #fff; }
+    .container { max-width: 860px; margin: 0 auto; padding: 0 24px; }
+    header { background: #050505; padding: 18px 0; }
+    header .container { display: flex; align-items: center; }
+    header a { color: #fff; text-decoration: none; font-weight: 700; font-size: 18px; }
+    .page-hero { background: #F9FAFB; padding: 48px 0 40px; border-bottom: 1px solid #E5E7EB; }
+    .page-hero h1 { font-size: 36px; font-weight: 800; line-height: 1.2; color: #050505; margin-bottom: 10px; }
+    .page-hero .meta { font-size: 14px; color: rgba(5,5,5,0.5); }
+    main { padding: 48px 0 80px; }
+    .toc { background: #F9FAFB; border: 1px solid #E5E7EB; border-radius: 8px; padding: 24px 32px; margin-bottom: 48px; }
+    .toc h2 { font-size: 15px; font-weight: 700; text-transform: uppercase; letter-spacing: 0.05em; color: #050505; margin-bottom: 14px; }
+    .toc ol { padding-left: 20px; }
+    .toc li { font-size: 15px; color: #4473CA; margin-bottom: 6px; }
+    .toc a { color: #4473CA; text-decoration: none; }
+    .toc a:hover { text-decoration: underline; }
+    .intro { margin-bottom: 40px; }
+    .intro p { margin-bottom: 14px; color: rgba(5,5,5,0.75); }
+    section.policy-section { margin-bottom: 44px; scroll-margin-top: 80px; }
+    section.policy-section h2 { font-size: 18px; font-weight: 800; color: #050505; margin-bottom: 16px; padding-bottom: 10px; border-bottom: 2px solid #4473CA; }
+    section.policy-section p { margin-bottom: 14px; color: rgba(5,5,5,0.75); }
+    section.policy-section ul, section.policy-section ol { padding-left: 22px; margin-bottom: 14px; }
+    section.policy-section li { margin-bottom: 10px; color: rgba(5,5,5,0.75); }
+    section.policy-section strong { color: #050505; }
+    .contact-block { background: #F9FAFB; border-radius: 8px; padding: 24px 28px; margin-top: 16px; }
+    .contact-block p { margin-bottom: 6px; color: rgba(5,5,5,0.75); }
+    .contact-block a { color: #4473CA; }
+    footer { background: #050505; padding: 28px 0; text-align: center; }
+    footer p { font-size: 14px; color: rgba(255,255,255,0.5); }
+    @media (max-width: 600px) { .page-hero h1 { font-size: 26px; } .toc { padding: 18px 20px; } }
+  
