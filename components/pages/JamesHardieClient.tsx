@@ -2,6 +2,7 @@
 import { Suspense, useEffect } from 'react'
 import GhlForm from '../GhlForm'
 import GclidCapture from '../GclidCapture'
+import MetaPixel from '../MetaPixel'
 import './james-hardie.css'
 
 function toggleFaqClick(e: React.MouseEvent<HTMLButtonElement>) {
@@ -16,7 +17,13 @@ function expandAllFaqs() {
   document.querySelectorAll('.faq-item').forEach(i => i.classList.add('open'))
 }
 
-export default function JamesHardieClient() {
+export default function JamesHardieClient({
+  formId = 'puhKbvE5026OlrQ53J7j',
+  pixel = false,
+}: {
+  formId?: string
+  pixel?: boolean
+} = {}) {
   useEffect(() => {
     const header = document.getElementById('site-header')
     if (!header) return
@@ -28,6 +35,7 @@ export default function JamesHardieClient() {
 
   return (
     <>
+      {pixel && <MetaPixel />}
       <Suspense fallback={null}><GclidCapture /></Suspense>
       <header className="site-header" id="site-header">
         <div className="container">
@@ -76,7 +84,7 @@ export default function JamesHardieClient() {
             
             <div className="hero-form-col">
               <h2 className="hero-form-heading">CONTACT US FOR A QUOTE WITHIN 24 HOURS</h2>
-              <GhlForm formId="puhKbvE5026OlrQ53J7j" height={620} formName="Protect and Transform Your Long Island –" />
+              <GhlForm formId={formId} height={620} formName="Protect and Transform Your Long Island –" />
               <p className="hero-form-note">Spring and summer installation slots fill quickly</p>
             </div>
       
