@@ -62,12 +62,9 @@ export default function LongIslandMetaLP() {
             </div>
             <div className="li-hero-grid">
               <div>
-                <h1 style={{ fontSize: 'clamp(34px, 5vw, 58px)', lineHeight: 1.1, fontWeight: 700, margin: '0 0 18px' }}>
+                <h1 style={{ fontSize: 'clamp(34px, 5vw, 58px)', lineHeight: 1.1, fontWeight: 700, margin: 0 }}>
                   Long Island&apos;s Premier Exterior Remodeling Company
                 </h1>
-                <p style={{ fontSize: 18, lineHeight: 1.6, color: '#d6d6d6', margin: 0 }}>
-                  Trust the experts with the reputation for quality service at a fair price. Get a quote within 24 hours.
-                </p>
               </div>
               <div style={{ background: '#fff', color: DARK, borderRadius: 10, padding: '26px 24px', boxShadow: '0 20px 50px rgba(0,0,0,0.35)' }}>
                 <h2 style={{ fontSize: 26, fontWeight: 700, textAlign: 'center', margin: '0 0 6px', textTransform: 'uppercase' }}>
