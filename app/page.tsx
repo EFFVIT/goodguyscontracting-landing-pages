@@ -16,5 +16,8 @@ export default async function Home({
     else if (value !== undefined) qs.append(key, value)
   }
   const query = qs.toString()
-  redirect(query ? `/c/james-hardie?${query}` : '/c/james-hardie')
+  // Points at the consolidated Search LP as of 2026-08-03. All three enabled
+  // RSAs were repointed there the same day; the bare domain should land on the
+  // page that actually takes the spend, not the page it replaced.
+  redirect(query ? `/c/hardie-estimate?${query}` : '/c/hardie-estimate')
 }
