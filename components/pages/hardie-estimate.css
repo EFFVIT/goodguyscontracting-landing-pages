@@ -66,7 +66,10 @@ img.he-logo { width: auto; height: 38px; }
   text-decoration: none; white-space: nowrap;
 }
 .he-header-phone svg { flex: none; }
-.he-header-cta { display: none; }
+/* Qualified with .he-header because `.he-btn` (same specificity, declared
+   later) sets display:inline-flex and would otherwise win the tie on source
+   order — which shipped the desktop CTA into the mobile header. */
+.he-header .he-header-cta { display: none; }
 
 /* ── hero ───────────────────────────────────────────────────────────────── */
 /* Mobile order is deliberate and is the single most important rule in this
@@ -265,10 +268,15 @@ img.he-badge-img { height: 30px; width: auto; }
 /* ── sticky mobile action bar ───────────────────────────────────────────── */
 /* Persistent on scroll so the CTA is never more than a thumb away. Hidden on
    desktop, where the header CTA is always in view. */
+/* padding-right reserves the bottom-right corner for the RootLogic FAB, which
+   is a 64px disc at an 18px inset and z-index 999990. Its offset is written
+   INLINE on its shadow host from lp_fab_config, so an inherited
+   --nsw-offset-y cannot move it — reserving the space here is self-contained
+   and does not couple this page to another component's internals. */
 .he-sticky {
   position: fixed; left: 0; right: 0; bottom: 0; z-index: 60;
   display: grid; grid-template-columns: 1fr 1fr; gap: 8px;
-  padding: 9px 12px calc(9px + env(safe-area-inset-bottom));
+  padding: 9px 94px calc(9px + env(safe-area-inset-bottom)) 12px;
   background: rgba(255,255,255,.97);
   backdrop-filter: saturate(140%) blur(8px);
   border-top: 1px solid var(--gg-line);
@@ -276,15 +284,6 @@ img.he-badge-img { height: 30px; width: auto; }
 }
 .he-sticky .he-btn { padding: 12px 10px; font-size: 14.5px; min-height: 46px; }
 .he-page { padding-bottom: 76px; }
-
-/* The RootLogic FAB is position:fixed bottom-right at z-index 999990, so it
-   lands on top of the sticky bar's primary CTA. It reads its offset from
-   --nsw-offset-y (declared with a fallback inside its shadow root, and custom
-   properties inherit through shadow boundaries), so lifting it is a one-liner.
-   Scoped with :has() so only pages that actually render the bar move the FAB. */
-@media (max-width: 899px) {
-  body:has(.he-sticky) { --nsw-offset-y: 92px; }
-}
 
 /* ── footer ─────────────────────────────────────────────────────────────── */
 .he-footer { background: #0b0d12; color: #9aa0ad; padding: 32px 0 26px; font-size: 13.5px; }
