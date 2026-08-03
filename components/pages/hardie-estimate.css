@@ -39,6 +39,12 @@
   -webkit-font-smoothing: antialiased;
 }
 .he-page *, .he-page *::before, .he-page *::after { box-sizing: border-box; }
+
+/* NOTE ON SPECIFICITY — this rule is (0,1,1) because of the element selector,
+   so it outranks any bare single-class rule like `.he-logo`. Every image that
+   needs an explicit height below is therefore written as `img.<class>` to tie
+   on specificity and win on source order. Shipping it the naive way rendered
+   the 303px logo at natural size across the whole header. */
 .he-page img { max-width: 100%; height: auto; display: block; }
 
 .he-container { width: 100%; max-width: 1140px; margin: 0 auto; padding: 0 18px; }
@@ -53,7 +59,7 @@
   display: flex; align-items: center; justify-content: space-between;
   gap: 12px; height: 58px;
 }
-.he-logo { width: auto; height: 38px; }
+img.he-logo { width: auto; height: 38px; }
 .he-header-phone {
   display: inline-flex; align-items: center; gap: 7px;
   font-size: 15px; font-weight: 700; color: var(--gg-ink);
@@ -73,7 +79,7 @@
   padding: 26px 0 30px;
   overflow: hidden;
 }
-.he-hero-bg {
+img.he-hero-bg {
   position: absolute; inset: 0;
   width: 100%; height: 100%; object-fit: cover;
   opacity: .26;
@@ -134,7 +140,7 @@
 .he-trust-item { display: flex; align-items: center; gap: 9px; }
 .he-trust-item svg { flex: none; }
 .he-trust-text { font-size: 13px; line-height: 1.35; font-weight: 600; color: var(--gg-ink-2); }
-.he-badge-img { height: 30px; width: auto; }
+img.he-badge-img { height: 30px; width: auto; }
 
 /* ── generic section ────────────────────────────────────────────────────── */
 .he-section { padding: 44px 0; }
@@ -305,7 +311,7 @@
 @media (min-width: 900px) {
   .he-container { padding: 0 28px; }
   .he-header-inner { height: 72px; }
-  .he-logo { height: 46px; }
+  img.he-logo { height: 46px; }
   .he-header-cta { display: inline-flex; }
   .he-header-actions { display: flex; align-items: center; gap: 14px; }
 
