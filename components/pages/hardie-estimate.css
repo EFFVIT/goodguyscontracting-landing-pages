@@ -311,7 +311,8 @@ img.he-badge-img { height: 30px; width: auto; }
   .he-container { padding: 0 28px; }
   .he-header-inner { height: 72px; }
   img.he-logo { height: 46px; }
-  .he-header-cta { display: inline-flex; }
+  /* Must match the base rule's specificity (0,2,0) — a media query adds none. */
+  .he-header .he-header-cta { display: inline-flex; }
   .he-header-actions { display: flex; align-items: center; gap: 14px; }
 
   .he-hero { padding: 56px 0 62px; }
