@@ -1,0 +1,335 @@
+/* ───────────────────────────────────────────────────────────────────────────
+   Good Guys Contracting — /c/hardie-estimate
+   Consolidated James Hardie LP for Google Search traffic.
+
+   Built against the 2026-08-03 paid-media audit. The three constraints that
+   drove every decision here:
+     1. Landing-page experience was BELOW AVERAGE on every non-brand keyword,
+        which is what pushed Quality Score to 1-3 and CPC to $13.37.
+     2. Mobile is 92% of spend and the old page took 5.4s to load on it
+        (4.2MB hero PNG + 3 eager Vimeo iframes).
+     3. The form sat below the fold on mobile.
+
+   So: mobile-first, form above the fold, WebP only, zero webfonts, and the
+   video is a click-to-play facade rather than an iframe on load.
+   ─────────────────────────────────────────────────────────────────────────── */
+
+:root {
+  --gg-blue: #4473CA;
+  --gg-blue-dark: #3360b5;
+  --gg-ink: #050505;
+  --gg-ink-2: #3f4148;
+  --gg-muted: #6b6e78;
+  --gg-line: #e3e5ea;
+  --gg-bg-soft: #f5f7fa;
+  --gg-white: #fff;
+  --gg-green: #1c7a4f;
+  --shadow-card: 0 1px 2px rgba(5,5,5,.05), 0 8px 24px rgba(5,5,5,.07);
+}
+
+/* No webfont. The old page asked for "Lato" and never loaded it, so it was
+   silently falling back anyway — this makes the fallback deliberate and
+   removes a render-blocking request we were not benefiting from. */
+.he-page {
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
+               "Helvetica Neue", Arial, sans-serif;
+  color: var(--gg-ink);
+  background: var(--gg-white);
+  line-height: 1.55;
+  -webkit-font-smoothing: antialiased;
+}
+.he-page *, .he-page *::before, .he-page *::after { box-sizing: border-box; }
+.he-page img { max-width: 100%; height: auto; display: block; }
+
+.he-container { width: 100%; max-width: 1140px; margin: 0 auto; padding: 0 18px; }
+
+/* ── header ─────────────────────────────────────────────────────────────── */
+.he-header {
+  position: sticky; top: 0; z-index: 40;
+  background: var(--gg-white);
+  border-bottom: 1px solid var(--gg-line);
+}
+.he-header-inner {
+  display: flex; align-items: center; justify-content: space-between;
+  gap: 12px; height: 58px;
+}
+.he-logo { width: auto; height: 38px; }
+.he-header-phone {
+  display: inline-flex; align-items: center; gap: 7px;
+  font-size: 15px; font-weight: 700; color: var(--gg-ink);
+  text-decoration: none; white-space: nowrap;
+}
+.he-header-phone svg { flex: none; }
+.he-header-cta { display: none; }
+
+/* ── hero ───────────────────────────────────────────────────────────────── */
+/* Mobile order is deliberate and is the single most important rule in this
+   file: headline, then FORM, then everything else. The audit measured a 1.28%
+   conversion rate on a page whose form sat ~9 screens down on mobile. */
+.he-hero {
+  position: relative;
+  background: #101828;
+  color: var(--gg-white);
+  padding: 26px 0 30px;
+  overflow: hidden;
+}
+.he-hero-bg {
+  position: absolute; inset: 0;
+  width: 100%; height: 100%; object-fit: cover;
+  opacity: .26;
+  z-index: 0;
+}
+.he-hero::after {
+  content: ""; position: absolute; inset: 0; z-index: 1;
+  background: linear-gradient(180deg, rgba(16,24,40,.72) 0%, rgba(16,24,40,.88) 100%);
+}
+.he-hero-inner { position: relative; z-index: 2; display: grid; gap: 22px; }
+
+.he-eyebrow {
+  display: inline-flex; align-items: center; gap: 8px;
+  font-size: 11.5px; font-weight: 700; letter-spacing: .1em; text-transform: uppercase;
+  color: #cfe0ff; margin: 0 0 10px;
+}
+.he-hero h1 {
+  margin: 0 0 10px;
+  font-size: 30px; line-height: 1.15; font-weight: 800; letter-spacing: -.022em;
+  text-wrap: balance;
+}
+.he-hero-sub {
+  margin: 0; font-size: 16px; line-height: 1.5; color: #d7dce6; max-width: 46ch;
+}
+
+/* The form card. Reserving height here prevents the layout shift that the
+   GhlForm placeholder would otherwise cause on a slow connection. */
+.he-form-card {
+  background: var(--gg-white);
+  border-radius: 14px;
+  padding: 18px 16px 14px;
+  box-shadow: 0 10px 40px rgba(0,0,0,.28);
+}
+.he-form-head {
+  margin: 0 0 4px; font-size: 19px; font-weight: 800; color: var(--gg-ink);
+  letter-spacing: -.015em; line-height: 1.25;
+}
+.he-form-sub { margin: 0 0 12px; font-size: 13.5px; color: var(--gg-muted); }
+.he-form-note {
+  margin: 10px 0 0; font-size: 12.5px; color: var(--gg-muted);
+  display: flex; align-items: center; gap: 7px; line-height: 1.4;
+}
+.he-form-note svg { flex: none; }
+
+.he-hero-bullets { list-style: none; margin: 0; padding: 0; display: grid; gap: 9px; }
+.he-hero-bullets li {
+  display: flex; align-items: flex-start; gap: 9px;
+  font-size: 14.5px; color: #e6eaf2;
+}
+.he-hero-bullets svg { flex: none; margin-top: 3px; }
+
+/* ── trust strip ────────────────────────────────────────────────────────── */
+.he-trust { background: var(--gg-bg-soft); border-bottom: 1px solid var(--gg-line); padding: 18px 0; }
+.he-trust-grid {
+  display: grid; grid-template-columns: repeat(2, 1fr); gap: 16px 12px;
+  align-items: center;
+}
+.he-trust-item { display: flex; align-items: center; gap: 9px; }
+.he-trust-item svg { flex: none; }
+.he-trust-text { font-size: 13px; line-height: 1.35; font-weight: 600; color: var(--gg-ink-2); }
+.he-badge-img { height: 30px; width: auto; }
+
+/* ── generic section ────────────────────────────────────────────────────── */
+.he-section { padding: 44px 0; }
+.he-section-alt { background: var(--gg-bg-soft); }
+.he-h2 {
+  margin: 0 0 8px; font-size: 25px; line-height: 1.2; font-weight: 800;
+  letter-spacing: -.022em; text-wrap: balance;
+}
+.he-lede { margin: 0 0 26px; font-size: 16px; color: var(--gg-ink-2); max-width: 62ch; }
+
+/* ── price band ─────────────────────────────────────────────────────────── */
+/* One number, stated once. The live RSAs currently carry $25K-$65K in a
+   headline and $40K-$65K in the description of the same ad; this page states
+   the range the description uses and the ad copy is being corrected to match. */
+.he-price {
+  background: var(--gg-ink); color: var(--gg-white);
+  border-radius: 14px; padding: 24px 20px; text-align: center;
+}
+.he-price-num {
+  font-size: 34px; font-weight: 800; letter-spacing: -.03em;
+  font-variant-numeric: tabular-nums; line-height: 1.1;
+}
+.he-price-lab { margin: 8px 0 0; font-size: 14px; color: #b9bec9; }
+
+/* ── process ────────────────────────────────────────────────────────────── */
+.he-steps { display: grid; gap: 14px; counter-reset: step; }
+.he-step {
+  background: var(--gg-white); border: 1px solid var(--gg-line); border-radius: 12px;
+  padding: 18px 18px 16px; box-shadow: var(--shadow-card);
+}
+.he-step-n {
+  display: inline-flex; align-items: center; justify-content: center;
+  width: 28px; height: 28px; border-radius: 50%;
+  background: var(--gg-blue); color: var(--gg-white);
+  font-size: 13px; font-weight: 800; margin-bottom: 10px;
+  font-variant-numeric: tabular-nums;
+}
+.he-step h3 { margin: 0 0 5px; font-size: 16.5px; font-weight: 700; letter-spacing: -.012em; }
+.he-step p { margin: 0; font-size: 14.5px; color: var(--gg-ink-2); }
+
+/* ── gallery ────────────────────────────────────────────────────────────── */
+.he-gallery { display: grid; gap: 16px; }
+.he-shot {
+  border: 1px solid var(--gg-line); border-radius: 12px; overflow: hidden;
+  background: var(--gg-white); box-shadow: var(--shadow-card);
+}
+.he-shot img { width: 100%; }
+.he-shot-cap {
+  padding: 10px 14px; font-size: 13px; color: var(--gg-muted);
+  border-top: 1px solid var(--gg-line);
+}
+
+/* ── video facade ───────────────────────────────────────────────────────── */
+/* Click-to-play. The old page mounted up to three Vimeo iframes on load,
+   which was most of its 5.4s. Nothing from player.vimeo.com is requested
+   until the visitor actually asks for the video. */
+.he-video {
+  position: relative; border-radius: 14px; overflow: hidden;
+  background: #0b1220; aspect-ratio: 16 / 9; width: 100%;
+  border: 0; padding: 0; cursor: pointer; display: block;
+}
+.he-video img { width: 100%; height: 100%; object-fit: cover; opacity: .55; }
+.he-video-play {
+  position: absolute; inset: 0; display: flex; align-items: center;
+  justify-content: center; flex-direction: column; gap: 10px;
+}
+.he-video-disc {
+  width: 62px; height: 62px; border-radius: 50%;
+  background: rgba(255,255,255,.95);
+  display: flex; align-items: center; justify-content: center;
+  box-shadow: 0 6px 26px rgba(0,0,0,.35);
+}
+.he-video-label { color: #fff; font-size: 13.5px; font-weight: 600; }
+.he-video iframe { position: absolute; inset: 0; width: 100%; height: 100%; border: 0; }
+
+/* ── testimonials ───────────────────────────────────────────────────────── */
+.he-reviews { display: grid; gap: 14px; }
+.he-review {
+  background: var(--gg-white); border: 1px solid var(--gg-line); border-radius: 12px;
+  padding: 18px; box-shadow: var(--shadow-card);
+}
+.he-stars { display: flex; gap: 2px; margin-bottom: 10px; }
+.he-review p { margin: 0 0 10px; font-size: 14.5px; color: var(--gg-ink-2); line-height: 1.55; }
+.he-review-attr { font-size: 13px; font-weight: 700; color: var(--gg-ink); margin: 0 !important; }
+
+/* ── faq ────────────────────────────────────────────────────────────────── */
+.he-faq { display: grid; gap: 0; border-top: 1px solid var(--gg-line); }
+.he-faq details { border-bottom: 1px solid var(--gg-line); }
+.he-faq summary {
+  cursor: pointer; padding: 16px 34px 16px 0; position: relative;
+  font-size: 16px; font-weight: 650; letter-spacing: -.01em; list-style: none;
+}
+.he-faq summary::-webkit-details-marker { display: none; }
+.he-faq summary::after {
+  content: "+"; position: absolute; right: 6px; top: 50%; transform: translateY(-50%);
+  font-size: 21px; font-weight: 400; color: var(--gg-blue); line-height: 1;
+}
+.he-faq details[open] summary::after { content: "\2013"; }
+.he-faq-body { padding: 0 0 16px; font-size: 14.5px; color: var(--gg-ink-2); margin: 0; }
+
+/* ── final cta ──────────────────────────────────────────────────────────── */
+.he-final { background: var(--gg-ink); color: var(--gg-white); padding: 44px 0; text-align: center; }
+.he-final h2 { margin: 0 0 10px; font-size: 25px; font-weight: 800; letter-spacing: -.022em; }
+.he-final p { margin: 0 0 22px; color: #c3c7d1; font-size: 16px; }
+.he-final-actions { display: grid; gap: 10px; max-width: 340px; margin: 0 auto; }
+
+/* ── buttons ────────────────────────────────────────────────────────────── */
+.he-btn {
+  display: inline-flex; align-items: center; justify-content: center; gap: 8px;
+  padding: 14px 22px; border-radius: 9px; font-size: 15.5px; font-weight: 700;
+  text-decoration: none; border: 1.5px solid transparent; cursor: pointer;
+  transition: background-color .16s ease, border-color .16s ease, color .16s ease;
+  min-height: 48px; text-align: center;
+}
+.he-btn-primary { background: var(--gg-blue); color: var(--gg-white); }
+.he-btn-primary:hover { background: var(--gg-blue-dark); }
+.he-btn-ghost-light { background: transparent; color: var(--gg-white); border-color: rgba(255,255,255,.5); }
+.he-btn-ghost-light:hover { border-color: #fff; background: rgba(255,255,255,.09); }
+.he-btn-outline { background: transparent; color: var(--gg-blue); border-color: var(--gg-blue); }
+.he-btn-outline:hover { background: var(--gg-blue); color: var(--gg-white); }
+
+/* ── sticky mobile action bar ───────────────────────────────────────────── */
+/* Persistent on scroll so the CTA is never more than a thumb away. Hidden on
+   desktop, where the header CTA is always in view. */
+.he-sticky {
+  position: fixed; left: 0; right: 0; bottom: 0; z-index: 60;
+  display: grid; grid-template-columns: 1fr 1fr; gap: 8px;
+  padding: 9px 12px calc(9px + env(safe-area-inset-bottom));
+  background: rgba(255,255,255,.97);
+  backdrop-filter: saturate(140%) blur(8px);
+  border-top: 1px solid var(--gg-line);
+  box-shadow: 0 -4px 20px rgba(5,5,5,.09);
+}
+.he-sticky .he-btn { padding: 12px 10px; font-size: 14.5px; min-height: 46px; }
+.he-page { padding-bottom: 76px; }
+
+/* The RootLogic FAB is position:fixed bottom-right at z-index 999990, so it
+   lands on top of the sticky bar's primary CTA. It reads its offset from
+   --nsw-offset-y (declared with a fallback inside its shadow root, and custom
+   properties inherit through shadow boundaries), so lifting it is a one-liner.
+   Scoped with :has() so only pages that actually render the bar move the FAB. */
+@media (max-width: 899px) {
+  body:has(.he-sticky) { --nsw-offset-y: 92px; }
+}
+
+/* ── footer ─────────────────────────────────────────────────────────────── */
+.he-footer { background: #0b0d12; color: #9aa0ad; padding: 32px 0 26px; font-size: 13.5px; }
+.he-footer-grid { display: grid; gap: 22px; }
+.he-footer strong { color: var(--gg-white); display: block; margin-bottom: 7px; font-size: 14.5px; }
+.he-footer a { color: #c8cdd8; text-decoration: none; }
+.he-footer a:hover { text-decoration: underline; }
+.he-footer-legal {
+  margin-top: 22px; padding-top: 16px; border-top: 1px solid #1c2029;
+  display: flex; flex-wrap: wrap; gap: 8px 18px; font-size: 12.5px;
+}
+
+/* ── focus + motion ─────────────────────────────────────────────────────── */
+.he-page a:focus-visible,
+.he-page button:focus-visible,
+.he-faq summary:focus-visible {
+  outline: 3px solid #8ab4ff; outline-offset: 2px; border-radius: 6px;
+}
+@media (prefers-reduced-motion: reduce) {
+  .he-page * { transition: none !important; animation: none !important; scroll-behavior: auto !important; }
+}
+
+/* ── desktop ────────────────────────────────────────────────────────────── */
+@media (min-width: 900px) {
+  .he-container { padding: 0 28px; }
+  .he-header-inner { height: 72px; }
+  .he-logo { height: 46px; }
+  .he-header-cta { display: inline-flex; }
+  .he-header-actions { display: flex; align-items: center; gap: 14px; }
+
+  .he-hero { padding: 56px 0 62px; }
+  .he-hero-inner { grid-template-columns: 1.05fr .95fr; gap: 48px; align-items: start; }
+  .he-hero h1 { font-size: 43px; }
+  .he-hero-sub { font-size: 17.5px; }
+  .he-form-card { padding: 24px 22px 18px; }
+  .he-form-head { font-size: 21px; }
+
+  .he-trust-grid { grid-template-columns: repeat(4, 1fr); gap: 20px; }
+  .he-trust-text { font-size: 13.5px; }
+
+  .he-section { padding: 68px 0; }
+  .he-h2 { font-size: 34px; }
+  .he-steps { grid-template-columns: repeat(4, 1fr); }
+  .he-gallery { grid-template-columns: repeat(3, 1fr); }
+  .he-reviews { grid-template-columns: repeat(3, 1fr); }
+  .he-price { padding: 34px; }
+  .he-price-num { font-size: 46px; }
+  .he-final h2 { font-size: 34px; }
+  .he-final-actions { grid-template-columns: repeat(2, auto); justify-content: center; max-width: none; }
+  .he-footer-grid { grid-template-columns: 1.4fr 1fr 1fr; }
+
+  .he-sticky { display: none; }
+  .he-page { padding-bottom: 0; }
+}
