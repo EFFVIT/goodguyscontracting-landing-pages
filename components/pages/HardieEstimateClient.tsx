@@ -89,8 +89,12 @@ export default function HardieEstimateClient() {
 
       <header className="he-header">
         <div className="he-container he-header-inner">
+          {/* Ink variant, not the white one. Every logo asset in this repo is a
+              pure-white silhouette (they were cut for the old dark hero), and a
+              white logo on this white header renders as nothing at all. Same
+              mark, same alpha, ink fill. */}
           <img
-            src="/img/hardie-estimate/gg_logow-1-1.webp"
+            src="/img/hardie-estimate/gg-logo-ink.webp"
             alt="Good Guys Contracting"
             className="he-logo"
             width="300" height="303"
