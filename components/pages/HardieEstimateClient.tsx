@@ -251,10 +251,6 @@ export default function HardieEstimateClient() {
               <img src="/img/hardie-estimate/before-after-2.webp" alt="Long Island home before and after fiber cement siding replacement" width="700" height="767" loading="lazy" />
               <figcaption className="he-shot-cap">Hardie plank with trim detail, Nassau County</figcaption>
             </figure>
-            <figure className="he-shot">
-              <img src="/img/hardie-estimate/container.webp" alt="Completed James Hardie fiber cement siding on a Long Island home" width="700" height="758" loading="lazy" />
-              <figcaption className="he-shot-cap">Board and batten accent, South Shore</figcaption>
-            </figure>
           </div>
         </div>
       </section>
