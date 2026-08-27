@@ -4,6 +4,15 @@ import Fab from '@/components/fab/Fab'
 import './globals.css'
 
 export const metadata = {
+  // metadataBase is load-bearing, not boilerplate. Next.js resolves every RELATIVE
+  // metadata URL against it, and with it unset the build falls back to
+  // http://localhost:3000 — so the deployed legal pages and 404 served
+  // <meta property="og:image" content="http://localhost:3000/img/james-hardie/GG_logow-1-1.png">
+  // to the public internet. The /c and /m routes set absolute URLs themselves and
+  // were never affected. Verified in the build output 2026-08-27: 11/11 prerendered
+  // pages absolute, zero localhost. It fails silently — the page renders perfectly
+  // and the defect lives only in a meta tag no human looks at (H-45).
+  metadataBase: new URL('https://more.goodguyscontracting.com'),
   openGraph: {
     images: [{ url: '/img/james-hardie/GG_logow-1-1.png', width: 600, height: 200, alt: 'Good Guys Contracting' }],
   },
