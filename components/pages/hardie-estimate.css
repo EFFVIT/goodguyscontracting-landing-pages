@@ -339,3 +339,14 @@ img.he-badge-img { height: 30px; width: auto; }
   .he-sticky { display: none; }
   .he-page { padding-bottom: 0; }
 }
+
+/* ── the form owns the bottom of the screen ─────────────────────────────────
+   Measured on production 2026-09-03 at 390x844, 390x745 and 375x667: with the
+   form scrolled to its end, elementFromPoint returned `.he-sticky` and its
+   buttons for the bottom 12-16% of the iframe — the band the GHL Submit button
+   sits in — and the FAB's 64px disc covered its right corner. Both are
+   redundant while the form itself is on screen, so both stand down.
+   `!important` on the FAB is deliberate: --nsw-offset-y is written inline on
+   the shadow host, and only an important declaration outranks an inline one. */
+html[data-gg-form-visible="1"] .he-sticky { display: none; }
+html[data-gg-form-visible="1"] #effvit-cl-widget { display: none !important; }

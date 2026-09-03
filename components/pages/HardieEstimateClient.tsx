@@ -216,7 +216,7 @@ export default function HardieEstimateClient() {
             <div className="he-step">
               <span className="he-step-n">1</span>
               <h3>Free consultation</h3>
-              <p>We inspect your home and help you choose the best Hardie siding style and colour.</p>
+              <p>We inspect your home and help you choose the best Hardie siding style and color.</p>
             </div>
             <div className="he-step">
               <span className="he-step-n">2</span>
@@ -291,7 +291,7 @@ export default function HardieEstimateClient() {
             </details>
             <details>
               <summary>How is fiber cement different from vinyl siding?</summary>
-              <p className="he-faq-body">Fiber cement is typically more durable, more weather resistant, and gives a higher-end appearance than vinyl. It also holds colour far longer, which matters on the coast.</p>
+              <p className="he-faq-body">Fiber cement is typically more durable, more weather resistant, and gives a higher-end appearance than vinyl. It also holds color far longer, which matters on the coast.</p>
             </details>
             <details>
               <summary>How long does the installation take?</summary>

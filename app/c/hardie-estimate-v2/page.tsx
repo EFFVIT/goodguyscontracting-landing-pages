@@ -1,18 +1,12 @@
 import type { Metadata } from 'next'
 import HardieEstimateV2Client from '@/components/pages/HardieEstimateV2Client'
 
-// 2026-09-03: this route now serves the v2 page. The ads keep pointing here, so
-// no Google Ads final-URL edit was needed — an RSA whose final URL changes
-// re-enters review and loses its asset history, and the campaign is already in
-// a relearn from the 09-02 budget cut. Swapping what the URL serves costs
-// neither. HardieEstimateClient is deliberately left in the repo: reverting is
-// changing this import back.
-//
-// Offer moved into the title. Pacific Exteriors — the highest-volume advertiser
-// in the 2026-08-14 teardown at 97 archived creatives — puts its dollar offer in
-// the title tag so it earns the click before the page loads. Good Guys'
-// equivalent lever is the financing already running on /m/long-island.
 export const metadata: Metadata = {
+  // Offer moved into the title. Pacific Exteriors — the highest-volume
+  // advertiser in the 2026-08-14 teardown at 97 archived creatives — puts its
+  // dollar offer in the title tag ("$750 Off Re-Side") so it earns the click
+  // before the page even loads. Good Guys' equivalent lever is the financing
+  // that was already running on /m/long-island and missing from search.
   title: 'James Hardie Siding on Long Island — Free Estimate, 0% for 12 Months | Good Guys Contracting',
   description:
     'Licensed James Hardie fiber cement siding installation for Long Island, Queens and Brooklyn. Rated 4.8 from 122 Google reviews. Detailed estimate within 24 hours, financing available on approved credit. We install — we are not a siding supplier.',

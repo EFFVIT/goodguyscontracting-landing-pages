@@ -1,5 +1,5 @@
 'use client'
-import { useEffect, useState } from 'react'
+import { useEffect, useRef, useState } from 'react'
 
 // ─────────────────────────────────────────────────────────────────────────────
 // EFFVIT canonical GHL form embed. Do not fork this per client.
@@ -26,6 +26,16 @@ import { useEffect, useState } from 'react'
 //    uncaught error aborts form_embed's init and leaves an empty wrapper — the
 //    form disappears entirely. That is the crash that got form_embed.js
 //    deleted from the fleet in the first place. form_embed.js owns resizing.
+//
+// 4. THE FORM OWNS THE BOTTOM OF THE SCREEN. While a form is on screen this
+//    sets `data-gg-form-visible` on <html>, so a page can stand its own fixed
+//    furniture down. Measured on production 2026-09-03: the sticky CTA bar
+//    (z 60) and the RootLogic FAB (z 999990) both sat over the GHL Submit
+//    button on every mobile viewport tested, and elementFromPoint confirmed
+//    the bottom 12-16% of the form was swallowing taps rather than passing
+//    them through. A page that pays $12-18 a click must not cover its own
+//    submit. Each page hides its own furniture off this attribute; nothing is
+//    hidden from here, so the contract stays additive.
 //
 // Hidden-field aliasing (H-27): GHL silently discards any param without a
 // matching hidden field on the form. The gclid field was created with key
@@ -59,6 +69,14 @@ function injectFormEmbedOnce() {
   }, 50)
 }
 
+// Ref-counted across every mounted form on the page.
+const VISIBLE_FORMS = new Set<string>()
+function syncFormVisibleAttr() {
+  const root = document.documentElement
+  if (VISIBLE_FORMS.size > 0) root.setAttribute('data-gg-form-visible', '1')
+  else root.removeAttribute('data-gg-form-visible')
+}
+
 export default function GhlForm({
   formId,
   height = 620,
@@ -74,6 +92,7 @@ export default function GhlForm({
   // null until params are resolved — the iframe does not render before then.
   const [src, setSrc] = useState<string | null>(null)
   const iframeId = `inline-${formId}`
+  const frameRef = useRef<HTMLIFrameElement | null>(null)
 
   useEffect(() => {
     const urlParams = new URLSearchParams(window.location.search)
@@ -104,6 +123,29 @@ export default function GhlForm({
     if (src) injectFormEmbedOnce()
   }, [src])
 
+  // Flag <html> while this form is on screen. Ref-counted, because a page may
+  // carry more than one form and the attribute must survive until the last one
+  // leaves. form_embed.js re-parents the iframe into an `<id>-wrapper` div, but
+  // it moves the same node rather than replacing it, so the observer holds.
+  useEffect(() => {
+    const el = frameRef.current
+    if (!src || !el || typeof IntersectionObserver === 'undefined') return
+    const io = new IntersectionObserver(
+      ([entry]) => {
+        if (entry.isIntersecting) VISIBLE_FORMS.add(iframeId)
+        else VISIBLE_FORMS.delete(iframeId)
+        syncFormVisibleAttr()
+      },
+      { threshold: 0.4 },
+    )
+    io.observe(el)
+    return () => {
+      io.disconnect()
+      VISIBLE_FORMS.delete(iframeId)
+      syncFormVisibleAttr()
+    }
+  }, [src, iframeId])
+
   // Reserve the space so resolving params does not shift the page.
   if (!src) {
     return <div style={{ width: '100%', height: `${height}px` }} aria-hidden="true" />
@@ -111,6 +153,7 @@ export default function GhlForm({
 
   return (
     <iframe
+      ref={frameRef}
       src={src}
       style={{ width: '100%', height: `${height}px`, border: 'none', borderRadius: '0px', display: 'block' }}
       id={iframeId}
