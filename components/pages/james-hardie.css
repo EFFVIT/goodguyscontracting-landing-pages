@@ -708,3 +708,12 @@
       .site-footer { padding: 30px 0 20px; }
     }
   
+/* ── the form owns the bottom of the screen ─────────────────────────────────
+   Measured on production 2026-09-03 at 390x745 and 375x667: with the form
+   scrolled to its end, elementFromPoint returned #effvit-cl-widget for the
+   right 10% of the iframe at 88% and 94% down — the Submit button's right
+   side. This page carries no sticky CTA bar, so unlike hardie-estimate the FAB
+   is the only offender. `!important` is required: --nsw-offset-y is written
+   inline on the shadow host, and only an important declaration outranks it.
+   The data-gg-form-visible attribute is set by GhlForm (see rule 4 there). */
+html[data-gg-form-visible="1"] #effvit-cl-widget { display: none !important; }
