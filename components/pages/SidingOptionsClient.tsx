@@ -179,7 +179,7 @@ export default function SidingOptionsClient() {
       
             
             <div className="siding-card recommended">
-              <p className="siding-card-title">Fiber Cement Siding</p>
+              <p className="siding-card-title">James Hardie Fiber Cement Siding</p>
               <div>
                 <p className="siding-card-sub">Pros</p>
                 <ul className="check-list">
@@ -187,6 +187,7 @@ export default function SidingOptionsClient() {
                   <li><svg width="18" height="18" viewBox="0 0 512 512" fill="#4473CA" aria-hidden="true"><path d="M173.898 439.404l-166.4-166.4c-9.997-9.997-9.997-26.206 0-36.204l36.203-36.204c9.997-9.998 26.207-9.998 36.204 0L192 312.69 432.095 72.596c9.997-9.997 26.207-9.997 36.204 0l36.203 36.204c9.997 9.997 9.997 26.206 0 36.204l-294.4 294.401c-9.998 9.997-26.207 9.997-36.204-.001z"/></svg>Moisture and pest resistance</li>
                   <li><svg width="18" height="18" viewBox="0 0 512 512" fill="#4473CA" aria-hidden="true"><path d="M173.898 439.404l-166.4-166.4c-9.997-9.997-9.997-26.206 0-36.204l36.203-36.204c9.997-9.998 26.207-9.998 36.204 0L192 312.69 432.095 72.596c9.997-9.997 26.207-9.997 36.204 0l36.203 36.204c9.997 9.997 9.997 26.206 0 36.204l-294.4 294.401c-9.998 9.997-26.207 9.997-36.204-.001z"/></svg>Long lifespan</li>
                   <li><svg width="18" height="18" viewBox="0 0 512 512" fill="#4473CA" aria-hidden="true"><path d="M173.898 439.404l-166.4-166.4c-9.997-9.997-9.997-26.206 0-36.204l36.203-36.204c9.997-9.998 26.207-9.998 36.204 0L192 312.69 432.095 72.596c9.997-9.997 26.207-9.997 36.204 0l36.203 36.204c9.997 9.997 9.997 26.206 0 36.204l-294.4 294.401c-9.998 9.997-26.207 9.997-36.204-.001z"/></svg>High-end appearance</li>
+                  <li><svg width="18" height="18" viewBox="0 0 512 512" fill="#4473CA" aria-hidden="true"><path d="M173.898 439.404l-166.4-166.4c-9.997-9.997-9.997-26.206 0-36.204l36.203-36.204c9.997-9.998 26.207-9.998 36.204 0L192 312.69 432.095 72.596c9.997-9.997 26.207-9.997 36.204 0l36.203 36.204c9.997 9.997 9.997 26.206 0 36.204l-294.4 294.401c-9.998 9.997-26.207 9.997-36.204-.001z"/></svg>Lap, shingle and board and batten styles</li>
                 </ul>
               </div>
               <div>
@@ -228,8 +229,8 @@ export default function SidingOptionsClient() {
           <div className="fiber-inner">
       
             <div className="fiber-copy">
-              <h2 className="section-heading">Why Fiber Cement Siding Is Often the Best Choice</h2>
-              <p className="section-text">Many Long Island homeowners choose fiber cement siding because it offers the best balance of durability, appearance, and long-term value.</p>
+              <h2 className="section-heading">Why James Hardie Fiber Cement Siding Is Often the Best Choice</h2>
+              <p className="section-text">Many Long Island homeowners choose fiber cement siding because it offers the best balance of durability, appearance, and long-term value, from classic lap siding to modern James Hardie board and batten.</p>
               <p className="fiber-copy-sub">Compared to vinyl siding, fiber cement provides:</p>
               <ul className="check-list" style={{ marginBottom: '32px' }}>
                 <li><svg width="20" height="20" viewBox="0 0 512 512" fill="#4473CA" aria-hidden="true"><path d="M173.898 439.404l-166.4-166.4c-9.997-9.997-9.997-26.206 0-36.204l36.203-36.204c9.997-9.998 26.207-9.998 36.204 0L192 312.69 432.095 72.596c9.997-9.997 26.207-9.997 36.204 0l36.203 36.204c9.997 9.997 9.997 26.206 0 36.204l-294.4 294.401c-9.998 9.997-26.207 9.997-36.204-.001z"/></svg>Greater durability</li>
@@ -322,7 +323,7 @@ export default function SidingOptionsClient() {
                   What is the best siding for Long Island homes?
                   <svg className="faq-chevron" width="18" height="18" viewBox="0 0 448 512" fill="#717182" aria-hidden="true"><path d="M207.029 381.476L12.686 187.132c-9.373-9.373-9.373-24.569 0-33.941l22.667-22.667c9.357-9.357 24.522-9.375 33.901-.04L224 284.505l154.745-154.021c9.379-9.335 24.544-9.317 33.901.04l22.667 22.667c9.373 9.373 9.373 24.569 0 33.941L240.971 381.476c-9.373 9.372-24.569 9.372-33.942 0z"/></svg>
                 </button>
-                <div className="faq-answer">Fiber cement siding is often considered one of the best options because it offers strong durability and weather resistance.</div>
+                <div className="faq-answer">James Hardie fiber cement siding is often considered one of the best options because it offers strong durability and weather resistance.</div>
               </div>
       
               <div className="faq-item">
@@ -346,7 +347,7 @@ export default function SidingOptionsClient() {
                   Do you sell siding materials directly?
                   <svg className="faq-chevron" width="18" height="18" viewBox="0 0 448 512" fill="#717182" aria-hidden="true"><path d="M207.029 381.476L12.686 187.132c-9.373-9.373-9.373-24.569 0-33.941l22.667-22.667c9.357-9.357 24.522-9.375 33.901-.04L224 284.505l154.745-154.021c9.379-9.335 24.544-9.317 33.901.04l22.667 22.667c9.373 9.373 9.373 24.569 0 33.941L240.971 381.476c-9.373 9.372-24.569 9.372-33.942 0z"/></svg>
                 </button>
-                <div className="faq-answer">Good Guys Contracting is a licensed siding installation contractor. We do not sell siding materials or supplies. All services are professional installation for Long Island homeowners.</div>
+                <div className="faq-answer">Good Guys Contracting is a licensed siding installation contractor. We do not sell siding materials or supplies. We provide complete professional installation of James Hardie fiber cement siding for Long Island homeowners.</div>
               </div>
       
             </div>
